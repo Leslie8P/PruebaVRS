@@ -310,9 +310,9 @@
             font-weight: 600;
         }
 
-        /* Progress bar */
+        /* Progress bar - CORREGIDO */
         .progress-container {
-            padding: 0 30px 20px;
+            padding: 20px 30px 10px;
         }
 
         .progress-bar {
@@ -322,28 +322,26 @@
             margin-bottom: 30px;
         }
 
-            .progress-bar::before {
-                content: '';
-                position: absolute;
-                top: 15px;
-                left: 0;
-                right: 0;
-                height: 4px;
-                background: #e0e0e0;
-                z-index: 1;
-            }
+        .progress-line {
+            position: absolute;
+            top: 15px;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: #e0e0e0;
+            z-index: 1;
+        }
 
-            .progress-bar::after {
-                content: '';
-                position: absolute;
-                top: 15px;
-                left: 0;
-                width: 0%;
-                height: 4px;
-                background: #4dabf7;
-                z-index: 2;
-                transition: width 0.3s ease;
-            }
+        .progress-completed {
+            position: absolute;
+            top: 15px;
+            left: 0;
+            height: 4px;
+            background: #28a745; /* Verde para progreso completado */
+            z-index: 2;
+            transition: width 0.3s ease;
+            width: 0%; /* Se ajusta dinámicamente con JavaScript */
+        }
 
         .progress-step {
             width: 34px;
@@ -358,16 +356,26 @@
             position: relative;
             z-index: 3;
             transition: all 0.3s ease;
+            border: 3px solid white;
         }
 
             .progress-step.active {
-                background: #4dabf7;
+                background: #4dabf7; /* Azul para paso activo */
                 transform: scale(1.1);
+                box-shadow: 0 0 0 3px rgba(77, 171, 247, 0.3);
             }
 
             .progress-step.completed {
-                background: #28a745;
+                background: #28a745; /* Verde para pasos completados */
+                transform: scale(1);
+                box-shadow: 0 0 0 3px rgba(40, 167, 69, 0.3);
             }
+
+        /* Elimina los pseudoelementos ::before y ::after que tenías antes */
+        .progress-bar::before,
+        .progress-bar::after {
+            display: none;
+        }
 
         /* Responsive */
         @media (max-width: 768px) {
@@ -506,14 +514,17 @@
 </head>
 <body>
     <div class="registro-container">
-        <!-- Barra de progreso -->
+        <!-- Barra de progreso CORREGIDA -->
         <div class="progress-container">
             <div class="progress-bar" id="progressBar">
-                <div class="progress-step completed">1</div>
-                <div class="progress-step completed">2</div>
-                <div class="progress-step completed">3</div>
-                <div class="progress-step active">4</div>
-                <div class="progress-step">5</div>
+                <div class="progress-line"></div>
+                <div class="progress-completed" id="progressCompleted"></div>
+
+                <div class="progress-step completed" data-step="1">✓</div>
+                <div class="progress-step active" data-step="2">2</div>
+                <div class="progress-step" data-step="3">3</div>
+                <div class="progress-step" data-step="4">4</div>
+                <div class="progress-step" data-step="5">5</div>
             </div>
         </div>
 
@@ -524,7 +535,7 @@
         </div>
 
         <!-- Paso 1: Bienvenida -->
-        <div class="step active" id="step-welcome">
+        <div class="step active" id="step-welcome" data-step="1">
             <div class="step-content">
                 <h2 class="step-title">Bienvenido a Joffroy</h2>
                 <p class="step-subtitle">Por favor ingresa tu información para comenzar el registro</p>
@@ -543,7 +554,7 @@
         </div>
 
         <!-- Paso 2: Datos Personales -->
-        <div class="step" id="step-datos">
+        <div class="step" id="step-datos" data-step="2">
             <div class="step-content">
                 <h2 class="step-title">Detalles personales</h2>
                 <p class="step-subtitle">Completa tu información de contacto</p>
@@ -581,7 +592,7 @@
         </div>
 
         <!-- Paso 3: Foto -->
-        <div class="step" id="step-foto">
+        <div class="step" id="step-foto" data-step="3">
             <div class="step-content">
                 <h2 class="step-title">Agregar Foto</h2>
                 <p class="step-subtitle">Toma una foto para completar tu registro</p>
@@ -606,7 +617,7 @@
         </div>
 
         <!-- Paso 4: Firma - CORREGIDO -->
-        <div class="step" id="step-firma">
+        <div class="step" id="step-firma" data-step="4">
             <div class="step-content">
                 <h2 class="step-title">Firma Digital</h2>
                 <p class="step-subtitle">Acuerdo de confidencialidad para visitantes</p>
@@ -634,7 +645,7 @@
         </div>
 
         <!-- Paso 5: Confirmación -->
-        <div class="step" id="step-confirmacion">
+        <div class="step" id="step-confirmacion" data-step="5">
             <div class="step-content">
                 <div class="confirmation-container">
                     <div class="confirmation-icon">
@@ -793,6 +804,40 @@
         }
         // ========== FIN SISTEMA DE FIRMA ==========
 
+        // ========== SISTEMA DE PROGRESS BAR CORREGIDO ==========
+        function updateProgressBar(stepId) {
+            const steps = document.querySelectorAll('.progress-step');
+            const progressCompleted = document.getElementById('progressCompleted');
+
+            // Obtener el número del paso actual
+            const currentStep = document.querySelector(`#${stepId}`);
+            const stepNumber = parseInt(currentStep.dataset.step);
+
+            // Calcular el porcentaje completado
+            const totalSteps = steps.length;
+            const completedWidth = ((stepNumber - 1) / (totalSteps - 1)) * 100;
+
+            // Actualizar la línea de progreso
+            progressCompleted.style.width = completedWidth + '%';
+
+            // Actualizar estados de los pasos
+            steps.forEach((step, index) => {
+                const stepNum = parseInt(step.dataset.step);
+                step.classList.remove('active', 'completed');
+
+                if (stepNum < stepNumber) {
+                    step.classList.add('completed');
+                    step.innerHTML = '✓';
+                } else if (stepNum === stepNumber) {
+                    step.classList.add('active');
+                    step.innerHTML = stepNum;
+                } else {
+                    step.innerHTML = stepNum;
+                }
+            });
+        }
+        // ========== FIN SISTEMA DE PROGRESS BAR ==========
+
         // Actualizar hora en tiempo real
         function updateTime() {
             const now = new Date();
@@ -842,41 +887,6 @@
             } else if (stepId === 'step-firma') {
                 // Guardar firma como imagen
                 visitanteData.firma = signatureCanvas.toDataURL('image/png');
-            }
-        }
-
-        // Actualizar barra de progreso
-        function updateProgressBar(stepId) {
-            const progressBar = document.querySelector('.progress-bar::after');
-            const steps = document.querySelectorAll('.progress-step');
-
-            steps.forEach(step => step.classList.remove('active', 'completed'));
-
-            if (stepId === 'step-welcome') {
-                progressBar.style.width = '0%';
-                steps[0].classList.add('active');
-            } else if (stepId === 'step-datos') {
-                progressBar.style.width = '20%';
-                steps[0].classList.add('completed');
-                steps[1].classList.add('active');
-            } else if (stepId === 'step-foto') {
-                progressBar.style.width = '40%';
-                steps[0].classList.add('completed');
-                steps[1].classList.add('completed');
-                steps[2].classList.add('active');
-            } else if (stepId === 'step-firma') {
-                progressBar.style.width = '60%';
-                steps[0].classList.add('completed');
-                steps[1].classList.add('completed');
-                steps[2].classList.add('completed');
-                steps[3].classList.add('active');
-            } else if (stepId === 'step-confirmacion') {
-                progressBar.style.width = '80%';
-                steps[0].classList.add('completed');
-                steps[1].classList.add('completed');
-                steps[2].classList.add('completed');
-                steps[3].classList.add('completed');
-                steps[4].classList.add('active');
             }
         }
 
