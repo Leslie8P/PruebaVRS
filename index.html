@@ -14,7 +14,7 @@
         }
 
         body {
-            background: linear-gradient(135deg, #1e3a5f, #4dabf7);
+            background: #f0f8ff; /* Azul cielo claro */
             min-height: 100vh;
             display: flex;
             justify-content: center;
@@ -35,7 +35,7 @@
 
         /* Header con hora */
         .header {
-            background: #1e3a5f;
+            background: #1e3a8a; /* Azul fuerte para el header */
             color: white;
             padding: 20px 30px;
             display: flex;
@@ -55,6 +55,7 @@
             position: absolute;
             left: 50%;
             transform: translateX(-50%);
+            color: white;
         }
 
         /* Contenido de los pasos */
@@ -77,7 +78,7 @@
 
         .step-title {
             font-size: 28px;
-            color: #1e3a5f;
+            color: #4dabf7; /* AZUL CIELO para títulos */
             margin-bottom: 10px;
             font-weight: 600;
         }
@@ -115,7 +116,7 @@
 
             .form-input:focus {
                 outline: none;
-                border-color: #4dabf7;
+                border-color: #4dabf7; /* Azul cielo para focus */
                 background: white;
             }
 
@@ -145,7 +146,7 @@
         }
 
             .photo-container:hover {
-                border-color: #4dabf7;
+                border-color: #4dabf7; /* Azul cielo para hover */
             }
 
         .photo-preview {
@@ -163,14 +164,14 @@
             .photo-placeholder i {
                 font-size: 48px;
                 margin-bottom: 10px;
-                color: #4dabf7;
+                color: #4dabf7; /* Azul cielo para icono */
             }
 
         .photo-text {
             font-size: 14px;
         }
 
-        /* Área de firma - CORREGIDA */
+        /* Área de firma */
         .signature-container {
             border: 2px dashed #ddd;
             border-radius: 10px;
@@ -253,13 +254,14 @@
         }
 
         .btn-primary {
-            background: linear-gradient(135deg, #1e3a5f, #4dabf7);
+            background: #4dabf7; /* Azul cielo para botones */
             color: white;
         }
 
             .btn-primary:hover {
+                background: #3a9ae0;
                 transform: translateY(-2px);
-                box-shadow: 0 5px 15px rgba(30, 58, 95, 0.3);
+                box-shadow: 0 5px 15px rgba(77, 171, 247, 0.3);
             }
 
         .btn-secondary {
@@ -293,7 +295,7 @@
 
         .confirmation-title {
             font-size: 24px;
-            color: #1e3a5f;
+            color: #4dabf7; /* AZUL CIELO para título de confirmación */
             margin-bottom: 10px;
             font-weight: 600;
         }
@@ -306,13 +308,14 @@
         }
 
         .host-name {
-            color: #1e3a5f;
+            color: #1e3a8a; /* Azul fuerte para nombres */
             font-weight: 600;
         }
 
-        /* Progress bar - CORREGIDO */
+        /* Progress bar */
         .progress-container {
             padding: 20px 30px 10px;
+            background: #f8f9fa;
         }
 
         .progress-bar {
@@ -337,10 +340,10 @@
             top: 15px;
             left: 0;
             height: 4px;
-            background: #28a745; /* Verde para progreso completado */
+            background: #28a745; /* VERDE para progreso completado */
             z-index: 2;
             transition: width 0.3s ease;
-            width: 0%; /* Se ajusta dinámicamente con JavaScript */
+            width: 0%;
         }
 
         .progress-step {
@@ -360,22 +363,16 @@
         }
 
             .progress-step.active {
-                background: #4dabf7; /* Azul para paso activo */
+                background: #1e3a8a; /* Azul fuerte para paso activo */
                 transform: scale(1.1);
-                box-shadow: 0 0 0 3px rgba(77, 171, 247, 0.3);
+                box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.3);
             }
 
             .progress-step.completed {
-                background: #28a745; /* Verde para pasos completados */
+                background: #28a745; /* VERDE para pasos completados */
                 transform: scale(1);
                 box-shadow: 0 0 0 3px rgba(40, 167, 69, 0.3);
             }
-
-        /* Elimina los pseudoelementos ::before y ::after que tenías antes */
-        .progress-bar::before,
-        .progress-bar::after {
-            display: none;
-        }
 
         /* Responsive */
         @media (max-width: 768px) {
@@ -514,7 +511,7 @@
 </head>
 <body>
     <div class="registro-container">
-        <!-- Barra de progreso CORREGIDA -->
+        <!-- Barra de progreso -->
         <div class="progress-container">
             <div class="progress-bar" id="progressBar">
                 <div class="progress-line"></div>
@@ -525,6 +522,7 @@
                 <div class="progress-step" data-step="3">3</div>
                 <div class="progress-step" data-step="4">4</div>
                 <div class="progress-step" data-step="5">5</div>
+                <div class="progress-step" data-step="6">6</div>
             </div>
         </div>
 
@@ -546,6 +544,34 @@
                 </div>
 
                 <div class="btn-container">
+                    <button class="btn btn-primary" onclick="nextStep('step-sucursal')">
+                        Continuar <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Paso 2: Selección de Sucursal -->
+        <div class="step" id="step-sucursal" data-step="2">
+            <div class="step-content">
+                <h2 class="step-title">Selección de Sucursal</h2>
+                <p class="step-subtitle">Selecciona la sucursal que visitas</p>
+
+                <div class="form-group">
+                    <label class="form-label">Sucursal *</label>
+                    <select class="form-select" id="sucursal" onchange="updateAnfitriones()">
+                        <option value="">Selecciona una sucursal</option>
+                        <option value="sucursal_centro">Sucursal Centro</option>
+                        <option value="sucursal_norte">Sucursal Norte</option>
+                        <option value="sucursal_sur">Sucursal Sur</option>
+                        <option value="sucursal_este">Sucursal Este</option>
+                    </select>
+                </div>
+
+                <div class="btn-container">
+                    <button class="btn btn-secondary" onclick="prevStep('step-welcome')">
+                        <i class="fas fa-arrow-left"></i> Atrás
+                    </button>
                     <button class="btn btn-primary" onclick="nextStep('step-datos')">
                         Continuar <i class="fas fa-arrow-right"></i>
                     </button>
@@ -553,8 +579,8 @@
             </div>
         </div>
 
-        <!-- Paso 2: Datos Personales -->
-        <div class="step" id="step-datos" data-step="2">
+        <!-- Paso 3: Datos Personales -->
+        <div class="step" id="step-datos" data-step="3">
             <div class="step-content">
                 <h2 class="step-title">Detalles personales</h2>
                 <p class="step-subtitle">Completa tu información de contacto</p>
@@ -570,18 +596,31 @@
                 </div>
 
                 <div class="form-group">
-                    <label class="form-label">Anfitrión</label>
+                    <label class="form-label">Empresa de procedencia</label>
+                    <input type="text" class="form-input" placeholder="Ingresa tu empresa" id="empresa">
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Motivo de la visita</label>
+                    <select class="form-select" id="motivo">
+                        <option value="">Selecciona un motivo</option>
+                        <option value="reunion">Reunión de negocios</option>
+                        <option value="entrevista">Entrevista</option>
+                        <option value="entrega">Entrega de documentos</option>
+                        <option value="capacitacion">Capacitación</option>
+                        <option value="otro">Otro</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Anfitrión *</label>
                     <select class="form-select" id="anfitrion">
-                        <option value="">Selecciona un anfitrión</option>
-                        <option value="Leslie Pacheco">Leslie Pacheco</option>
-                        <option value="Lic. Ramírez">Lic. Ramírez</option>
-                        <option value="Ing. Torres">Ing. Torres</option>
-                        <option value="Dr. Mendoza">Dr. Mendoza</option>
+                        <option value="">Primero selecciona una sucursal</option>
                     </select>
                 </div>
 
                 <div class="btn-container">
-                    <button class="btn btn-secondary" onclick="prevStep('step-welcome')">
+                    <button class="btn btn-secondary" onclick="prevStep('step-sucursal')">
                         <i class="fas fa-arrow-left"></i> Atrás
                     </button>
                     <button class="btn btn-primary" onclick="nextStep('step-foto')">
@@ -591,8 +630,8 @@
             </div>
         </div>
 
-        <!-- Paso 3: Foto -->
-        <div class="step" id="step-foto" data-step="3">
+        <!-- Paso 4: Foto -->
+        <div class="step" id="step-foto" data-step="4">
             <div class="step-content">
                 <h2 class="step-title">Agregar Foto</h2>
                 <p class="step-subtitle">Toma una foto para completar tu registro</p>
@@ -616,8 +655,8 @@
             </div>
         </div>
 
-        <!-- Paso 4: Firma - CORREGIDO -->
-        <div class="step" id="step-firma" data-step="4">
+        <!-- Paso 5: Firma -->
+        <div class="step" id="step-firma" data-step="5">
             <div class="step-content">
                 <h2 class="step-title">Firma Digital</h2>
                 <p class="step-subtitle">Acuerdo de confidencialidad para visitantes</p>
@@ -644,8 +683,8 @@
             </div>
         </div>
 
-        <!-- Paso 5: Confirmación -->
-        <div class="step" id="step-confirmacion" data-step="5">
+        <!-- Paso 6: Confirmación -->
+        <div class="step" id="step-confirmacion" data-step="6">
             <div class="step-content">
                 <div class="confirmation-container">
                     <div class="confirmation-icon">
@@ -654,7 +693,7 @@
                     <h2 class="confirmation-title">¡Bienvenido <span id="confirmNombre">Nombre</span>!</h2>
                     <p class="confirmation-message">
                         Hemos informado a <span class="host-name" id="confirmAnfitrion">Leslie Pacheco</span><br>
-                        que estás aquí.
+                        que estás aquí en la <span class="host-name" id="confirmSucursal">Sucursal Centro</span>.
                     </p>
 
                     <div class="btn-container">
@@ -685,7 +724,51 @@
         // Datos del visitante
         let visitanteData = {};
 
-        // ========== SISTEMA DE FIRMA CORREGIDO ==========
+        // Datos de anfitriones por sucursal
+        const anfitrionesPorSucursal = {
+            'sucursal_centro': [
+                'Leslie Pacheco',
+                'Lic. Ramírez',
+                'Ing. Torres'
+            ],
+            'sucursal_norte': [
+                'Dr. Mendoza',
+                'Lic. García',
+                'Ing. López'
+            ],
+            'sucursal_sur': [
+                'Lic. Hernández',
+                'Ing. Martínez',
+                'Dr. Rodríguez'
+            ],
+            'sucursal_este': [
+                'Ing. Pérez',
+                'Lic. González',
+                'Dr. Sánchez'
+            ]
+        };
+
+        // Actualizar lista de anfitriones según la sucursal seleccionada
+        function updateAnfitriones() {
+            const sucursalSelect = document.getElementById('sucursal');
+            const anfitrionSelect = document.getElementById('anfitrion');
+            const sucursal = sucursalSelect.value;
+            
+            // Limpiar opciones actuales
+            anfitrionSelect.innerHTML = '<option value="">Selecciona un anfitrión</option>';
+            
+            // Si hay una sucursal seleccionada, agregar sus anfitriones
+            if (sucursal && anfitrionesPorSucursal[sucursal]) {
+                anfitrionesPorSucursal[sucursal].forEach(anfitrion => {
+                    const option = document.createElement('option');
+                    option.value = anfitrion;
+                    option.textContent = anfitrion;
+                    anfitrionSelect.appendChild(option);
+                });
+            }
+        }
+
+        // ========== SISTEMA DE FIRMA ==========
         let isDrawing = false;
         let lastX = 0;
         let lastY = 0;
@@ -804,7 +887,7 @@
         }
         // ========== FIN SISTEMA DE FIRMA ==========
 
-        // ========== SISTEMA DE PROGRESS BAR CORREGIDO ==========
+        // ========== SISTEMA DE PROGRESS BAR ==========
         function updateProgressBar(stepId) {
             const steps = document.querySelectorAll('.progress-step');
             const progressCompleted = document.getElementById('progressCompleted');
@@ -880,9 +963,13 @@
         function saveStepData(stepId) {
             if (stepId === 'step-welcome') {
                 visitanteData.nombre = document.getElementById('nombreCompleto').value;
+            } else if (stepId === 'step-sucursal') {
+                visitanteData.sucursal = document.getElementById('sucursal').value;
             } else if (stepId === 'step-datos') {
                 visitanteData.email = document.getElementById('email').value;
                 visitanteData.telefono = document.getElementById('telefono').value;
+                visitanteData.empresa = document.getElementById('empresa').value;
+                visitanteData.motivo = document.getElementById('motivo').value;
                 visitanteData.anfitrion = document.getElementById('anfitrion').value;
             } else if (stepId === 'step-firma') {
                 // Guardar firma como imagen
@@ -896,6 +983,12 @@
                 const nombre = document.getElementById('nombreCompleto').value.trim();
                 if (!nombre) {
                     alert('Por favor ingresa tu nombre completo');
+                    return false;
+                }
+            } else if (stepId === 'step-sucursal') {
+                const sucursal = document.getElementById('sucursal').value;
+                if (!sucursal) {
+                    alert('Por favor selecciona una sucursal');
                     return false;
                 }
             } else if (stepId === 'step-datos') {
@@ -982,6 +1075,11 @@
         function updateConfirmation() {
             document.getElementById('confirmNombre').textContent = visitanteData.nombre || 'Visitante';
             document.getElementById('confirmAnfitrion').textContent = visitanteData.anfitrion || 'el anfitrión';
+            
+            // Mostrar sucursal seleccionada
+            const sucursalSelect = document.getElementById('sucursal');
+            const selectedOption = sucursalSelect.options[sucursalSelect.selectedIndex];
+            document.getElementById('confirmSucursal').textContent = selectedOption.text || 'la sucursal';
         }
 
         // Finalizar registro
@@ -998,7 +1096,9 @@
         function resetForm() {
             // Limpiar formularios
             document.querySelectorAll('.form-input').forEach(input => input.value = '');
-            document.getElementById('anfitrion').value = '';
+            document.getElementById('sucursal').value = '';
+            document.getElementById('anfitrion').innerHTML = '<option value="">Primero selecciona una sucursal</option>';
+            document.getElementById('motivo').value = '';
 
             // Limpiar foto
             const photoPreview = document.getElementById('photoPreview');
