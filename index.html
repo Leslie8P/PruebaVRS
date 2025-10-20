@@ -518,6 +518,8 @@
                 <div class="progress-step active" data-step="3">3</div>
                 <div class="progress-step" data-step="4">4</div>
                 <div class="progress-step" data-step="5">5</div>
+                <div class="progress-step" data-step="6">6</div>
+                <div class="progress-step" data-step="7">7</div>
             </div>
         </div>
 
@@ -539,6 +541,34 @@
                 </div>
 
                 <div class="btn-container">
+                    <button class="btn btn-primary" onclick="nextStep('step-sucursal')">
+                        Continuar <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Paso 2: Selección de Sucursal -->
+        <div class="step" id="step-sucursal" data-step="2">
+            <div class="step-content">
+                <h2 class="step-title">Selección de Sucursal</h2>
+                <p class="step-subtitle">Selecciona la sucursal que visitas</p>
+
+                <div class="form-group">
+                    <label class="form-label">Sucursal *</label>
+                    <select class="form-select" id="sucursal" onchange="updateAnfitriones()">
+                        <option value="">Selecciona una sucursal</option>
+                        <option value="sucursal_centro">Sucursal Centro</option>
+                        <option value="sucursal_norte">Sucursal Norte</option>
+                        <option value="sucursal_sur">Sucursal Sur</option>
+                        <option value="sucursal_este">Sucursal Este</option>
+                    </select>
+                </div>
+
+                <div class="btn-container">
+                    <button class="btn btn-secondary" onclick="prevStep('step-welcome')">
+                        <i class="fas fa-arrow-left"></i> Atrás
+                    </button>
                     <button class="btn btn-primary" onclick="nextStep('step-datos')">
                         Continuar <i class="fas fa-arrow-right"></i>
                     </button>
@@ -546,11 +576,11 @@
             </div>
         </div>
 
-        <!-- Paso 2: Datos Personales -->
-        <div class="step" id="step-datos" data-step="2">
+        <!-- Paso 3: Datos Personales -->
+        <div class="step" id="step-datos" data-step="3">
             <div class="step-content">
-                <h2 class="step-title">Detalles personales</h2>
-                <p class="step-subtitle">Completa tu información de contacto</p>
+                <h2 class="step-title">Datos Personales</h2>
+                <p class="step-subtitle">Completa tu información personal</p>
 
                 <div class="form-group">
                     <label class="form-label">Tu dirección de correo electrónico</label>
@@ -562,19 +592,49 @@
                     <input type="tel" class="form-input" placeholder="Ingresa tu número" id="telefono">
                 </div>
 
+                <div class="btn-container">
+                    <button class="btn btn-secondary" onclick="prevStep('step-sucursal')">
+                        <i class="fas fa-arrow-left"></i> Atrás
+                    </button>
+                    <button class="btn btn-primary" onclick="nextStep('step-motivo')">
+                        Continuar <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Paso 4: Motivo de la Visita -->
+        <div class="step" id="step-motivo" data-step="4">
+            <div class="step-content">
+                <h2 class="step-title">Detalles de la Visita</h2>
+                <p class="step-subtitle">Información sobre tu visita</p>
+
                 <div class="form-group">
-                    <label class="form-label">Anfitrión</label>
+                    <label class="form-label">Empresa de procedencia</label>
+                    <input type="text" class="form-input" placeholder="Ingresa tu empresa" id="empresa">
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Motivo de la visita</label>
+                    <select class="form-select" id="motivo">
+                        <option value="">Selecciona un motivo</option>
+                        <option value="reunion">Reunión de negocios</option>
+                        <option value="entrevista">Entrevista</option>
+                        <option value="entrega">Entrega de documentos</option>
+                        <option value="capacitacion">Capacitación</option>
+                        <option value="otro">Otro</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Anfitrión *</label>
                     <select class="form-select" id="anfitrion">
                         <option value="">Selecciona un anfitrión</option>
-                        <option value="Leslie Pacheco">Leslie Pacheco</option>
-                        <option value="Lic. Ramírez">Lic. Ramírez</option>
-                        <option value="Ing. Torres">Ing. Torres</option>
-                        <option value="Dr. Mendoza">Dr. Mendoza</option>
                     </select>
                 </div>
 
                 <div class="btn-container">
-                    <button class="btn btn-secondary" onclick="prevStep('step-welcome')">
+                    <button class="btn btn-secondary" onclick="prevStep('step-datos')">
                         <i class="fas fa-arrow-left"></i> Atrás
                     </button>
                     <button class="btn btn-primary" onclick="nextStep('step-foto')">
@@ -584,8 +644,8 @@
             </div>
         </div>
 
-        <!-- Paso 3: Foto -->
-        <div class="step" id="step-foto" data-step="3">
+        <!-- Paso 5: Foto -->
+        <div class="step" id="step-foto" data-step="5">
             <div class="step-content">
                 <h2 class="step-title">Agregar Foto</h2>
                 <p class="step-subtitle">Toma una foto para completar tu registro</p>
@@ -599,7 +659,7 @@
                 </div>
 
                 <div class="btn-container">
-                    <button class="btn btn-secondary" onclick="prevStep('step-datos')">
+                    <button class="btn btn-secondary" onclick="prevStep('step-motivo')">
                         <i class="fas fa-arrow-left"></i> Atrás
                     </button>
                     <button class="btn btn-primary" onclick="nextStep('step-firma')">
@@ -609,8 +669,8 @@
             </div>
         </div>
 
-        <!-- Paso 4: Firma -->
-        <div class="step" id="step-firma" data-step="4">
+        <!-- Paso 6: Firma -->
+        <div class="step" id="step-firma" data-step="6">
             <div class="step-content">
                 <h2 class="step-title">Firma Digital</h2>
                 <p class="step-subtitle">Acuerdo de confidencialidad para visitantes</p>
@@ -637,8 +697,8 @@
             </div>
         </div>
 
-        <!-- Paso 5: Confirmación -->
-        <div class="step" id="step-confirmacion" data-step="5">
+        <!-- Paso 7: Confirmación -->
+        <div class="step" id="step-confirmacion" data-step="7">
             <div class="step-content">
                 <div class="confirmation-container">
                     <div class="confirmation-icon">
@@ -647,7 +707,7 @@
                     <h2 class="confirmation-title">¡Bienvenido <span id="confirmNombre">Nombre</span>!</h2>
                     <p class="confirmation-message">
                         Hemos informado a <span class="host-name" id="confirmAnfitrion">Leslie Pacheco</span><br>
-                        que estás aquí.
+                        que estás aquí en la <span class="host-name" id="confirmSucursal">sucursal</span>.
                     </p>
 
                     <div class="btn-container">
@@ -677,6 +737,14 @@
     <script>
         // Datos del visitante
         let visitanteData = {};
+
+        // Lista de anfitriones por sucursal
+        const anfitrionesPorSucursal = {
+            'sucursal_centro': ['Leslie Pacheco', 'Carlos Rodríguez', 'Ana Martínez'],
+            'sucursal_norte': ['María González', 'Pedro Sánchez', 'Laura Fernández'],
+            'sucursal_sur': ['José López', 'Carmen García', 'David Pérez'],
+            'sucursal_este': ['Sofía Ramírez', 'Miguel Torres', 'Elena Castro']
+        };
 
         // ========== SISTEMA DE FIRMA ==========
         let isDrawing = false;
@@ -835,13 +903,38 @@
             updateProgressBar(prevStepId);
         }
 
+        // Actualizar lista de anfitriones según sucursal seleccionada
+        function updateAnfitriones() {
+            const sucursalSelect = document.getElementById('sucursal');
+            const anfitrionSelect = document.getElementById('anfitrion');
+            const sucursal = sucursalSelect.value;
+            
+            // Limpiar opciones actuales
+            anfitrionSelect.innerHTML = '<option value="">Selecciona un anfitrión</option>';
+            
+            // Agregar anfitriones según la sucursal
+            if (sucursal && anfitrionesPorSucursal[sucursal]) {
+                anfitrionesPorSucursal[sucursal].forEach(anfitrion => {
+                    const option = document.createElement('option');
+                    option.value = anfitrion;
+                    option.textContent = anfitrion;
+                    anfitrionSelect.appendChild(option);
+                });
+            }
+        }
+
         // Guardar datos del paso actual
         function saveStepData(stepId) {
             if (stepId === 'step-welcome') {
                 visitanteData.nombre = document.getElementById('nombreCompleto').value;
+            } else if (stepId === 'step-sucursal') {
+                visitanteData.sucursal = document.getElementById('sucursal').value;
             } else if (stepId === 'step-datos') {
                 visitanteData.email = document.getElementById('email').value;
                 visitanteData.telefono = document.getElementById('telefono').value;
+            } else if (stepId === 'step-motivo') {
+                visitanteData.empresa = document.getElementById('empresa').value;
+                visitanteData.motivo = document.getElementById('motivo').value;
                 visitanteData.anfitrion = document.getElementById('anfitrion').value;
             } else if (stepId === 'step-firma') {
                 // Guardar firma como imagen
@@ -861,28 +954,45 @@
             if (stepId === 'step-welcome') {
                 progressPercentage = 0;
                 steps[0].classList.add('active');
-            } else if (stepId === 'step-datos') {
-                progressPercentage = 25;
+            } else if (stepId === 'step-sucursal') {
+                progressPercentage = 16;
                 steps[0].classList.add('completed');
                 steps[1].classList.add('active');
-            } else if (stepId === 'step-foto') {
-                progressPercentage = 50;
+            } else if (stepId === 'step-datos') {
+                progressPercentage = 32;
                 steps[0].classList.add('completed');
                 steps[1].classList.add('completed');
                 steps[2].classList.add('active');
-            } else if (stepId === 'step-firma') {
-                progressPercentage = 75;
+            } else if (stepId === 'step-motivo') {
+                progressPercentage = 48;
                 steps[0].classList.add('completed');
                 steps[1].classList.add('completed');
                 steps[2].classList.add('completed');
                 steps[3].classList.add('active');
+            } else if (stepId === 'step-foto') {
+                progressPercentage = 64;
+                steps[0].classList.add('completed');
+                steps[1].classList.add('completed');
+                steps[2].classList.add('completed');
+                steps[3].classList.add('completed');
+                steps[4].classList.add('active');
+            } else if (stepId === 'step-firma') {
+                progressPercentage = 80;
+                steps[0].classList.add('completed');
+                steps[1].classList.add('completed');
+                steps[2].classList.add('completed');
+                steps[3].classList.add('completed');
+                steps[4].classList.add('completed');
+                steps[5].classList.add('active');
             } else if (stepId === 'step-confirmacion') {
                 progressPercentage = 100;
                 steps[0].classList.add('completed');
                 steps[1].classList.add('completed');
                 steps[2].classList.add('completed');
                 steps[3].classList.add('completed');
-                steps[4].classList.add('active');
+                steps[4].classList.add('completed');
+                steps[5].classList.add('completed');
+                steps[6].classList.add('active');
             }
             
             progressCompleted.style.width = `${progressPercentage}%`;
@@ -896,7 +1006,13 @@
                     alert('Por favor ingresa tu nombre completo');
                     return false;
                 }
-            } else if (stepId === 'step-datos') {
+            } else if (stepId === 'step-sucursal') {
+                const sucursal = document.getElementById('sucursal').value;
+                if (!sucursal) {
+                    alert('Por favor selecciona una sucursal');
+                    return false;
+                }
+            } else if (stepId === 'step-motivo') {
                 const anfitrion = document.getElementById('anfitrion').value;
                 if (!anfitrion) {
                     alert('Por favor selecciona un anfitrión');
@@ -980,6 +1096,16 @@
         function updateConfirmation() {
             document.getElementById('confirmNombre').textContent = visitanteData.nombre || 'Visitante';
             document.getElementById('confirmAnfitrion').textContent = visitanteData.anfitrion || 'el anfitrión';
+            
+            // Traducir código de sucursal a nombre legible
+            let nombreSucursal = 'la sucursal';
+            switch(visitanteData.sucursal) {
+                case 'sucursal_centro': nombreSucursal = 'Sucursal Centro'; break;
+                case 'sucursal_norte': nombreSucursal = 'Sucursal Norte'; break;
+                case 'sucursal_sur': nombreSucursal = 'Sucursal Sur'; break;
+                case 'sucursal_este': nombreSucursal = 'Sucursal Este'; break;
+            }
+            document.getElementById('confirmSucursal').textContent = nombreSucursal;
         }
 
         // Finalizar registro
@@ -996,7 +1122,7 @@
         function resetForm() {
             // Limpiar formularios
             document.querySelectorAll('.form-input').forEach(input => input.value = '');
-            document.getElementById('anfitrion').value = '';
+            document.querySelectorAll('.form-select').forEach(select => select.value = '');
 
             // Limpiar foto
             const photoPreview = document.getElementById('photoPreview');
