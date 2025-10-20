@@ -14,7 +14,7 @@
         }
 
         body {
-            background: #f0f8ff; /* Azul cielo claro */
+            background: #f0f8ff;
             min-height: 100vh;
             display: flex;
             justify-content: center;
@@ -28,20 +28,26 @@
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
             width: 100%;
             max-width: 800px;
+            height: 90vh;
             min-height: 600px;
+            max-height: 800px;
             overflow: hidden;
             position: relative;
+            display: flex;
+            flex-direction: column;
         }
 
         /* Header con hora */
         .header {
-            background: #1e3a8a; /* Azul fuerte para el header */
+            background: #1e3a8a;
             color: white;
             padding: 20px 30px;
             display: flex;
             justify-content: space-between;
             align-items: center;
             position: relative;
+            flex-shrink: 0;
+            min-height: 80px;
         }
 
         .time {
@@ -58,271 +64,18 @@
             color: white;
         }
 
-        /* Contenido de los pasos */
-        .step {
-            display: none;
-            padding: 40px 30px;
-            min-height: 500px;
-        }
-
-            .step.active {
-                display: block;
-                animation: fadeIn 0.5s ease;
-            }
-
-        .step-content {
-            max-width: 500px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .step-title {
-            font-size: 28px;
-            color: #4dabf7; /* AZUL CIELO para títulos */
-            margin-bottom: 10px;
-            font-weight: 600;
-        }
-
-        .step-subtitle {
-            color: #666;
-            margin-bottom: 30px;
-            font-size: 16px;
-            line-height: 1.5;
-        }
-
-        /* Formularios */
-        .form-group {
-            margin-bottom: 25px;
-            text-align: left;
-        }
-
-        .form-label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 600;
-            color: #333;
-            font-size: 14px;
-        }
-
-        .form-input {
-            width: 100%;
-            padding: 15px 20px;
-            border: 2px solid #e0e0e0;
-            border-radius: 10px;
-            font-size: 16px;
-            transition: border-color 0.3s ease;
-            background: #f8f9fa;
-        }
-
-            .form-input:focus {
-                outline: none;
-                border-color: #4dabf7; /* Azul cielo para focus */
-                background: white;
-            }
-
-        .form-select {
-            width: 100%;
-            padding: 15px 20px;
-            border: 2px solid #e0e0e0;
-            border-radius: 10px;
-            font-size: 16px;
-            background: #f8f9fa;
-        }
-
-        /* Área de foto */
-        .photo-container {
-            width: 200px;
-            height: 200px;
-            margin: 0 auto 30px;
-            border: 3px dashed #ddd;
-            border-radius: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: #f8f9fa;
-            cursor: pointer;
-            overflow: hidden;
-            position: relative;
-        }
-
-            .photo-container:hover {
-                border-color: #4dabf7; /* Azul cielo para hover */
-            }
-
-        .photo-preview {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: none;
-        }
-
-        .photo-placeholder {
-            text-align: center;
-            color: #666;
-        }
-
-            .photo-placeholder i {
-                font-size: 48px;
-                margin-bottom: 10px;
-                color: #4dabf7; /* Azul cielo para icono */
-            }
-
-        .photo-text {
-            font-size: 14px;
-        }
-
-        /* Área de firma */
-        .signature-container {
-            border: 2px dashed #ddd;
-            border-radius: 10px;
-            padding: 20px;
-            background: #f8f9fa;
-            margin-bottom: 20px;
-            text-align: center;
-        }
-
-        .signature-title {
-            font-size: 16px;
-            color: #333;
-            margin-bottom: 15px;
-            font-weight: 600;
-        }
-
-        .signature-canvas {
-            width: 100%;
-            height: 150px;
-            border: 2px solid #ddd;
-            background: white;
-            border-radius: 8px;
-            cursor: crosshair;
-            touch-action: none;
-            display: block;
-        }
-
-        .signature-actions {
-            display: flex;
-            gap: 10px;
-            justify-content: center;
-            margin-top: 15px;
-        }
-
-        .btn-clear {
-            background: #dc3545;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 6px;
-            cursor: pointer;
-            font-size: 14px;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-        }
-
-            .btn-clear:hover {
-                background: #c82333;
-            }
-
-        .signature-notice {
-            font-size: 12px;
-            color: #666;
-            margin-top: 10px;
-            font-style: italic;
-        }
-
-        /* Botones */
-        .btn-container {
-            display: flex;
-            gap: 15px;
-            justify-content: center;
-            margin-top: 30px;
-        }
-
-        .btn {
-            padding: 15px 30px;
-            border: none;
-            border-radius: 10px;
-            font-size: 16px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            min-width: 140px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-        }
-
-        .btn-primary {
-            background: #4dabf7; /* Azul cielo para botones */
-            color: white;
-        }
-
-            .btn-primary:hover {
-                background: #3a9ae0;
-                transform: translateY(-2px);
-                box-shadow: 0 5px 15px rgba(77, 171, 247, 0.3);
-            }
-
-        .btn-secondary {
-            background: #f8f9fa;
-            color: #666;
-            border: 2px solid #e0e0e0;
-        }
-
-            .btn-secondary:hover {
-                background: #e9ecef;
-            }
-
-        /* Pantalla de confirmación */
-        .confirmation-container {
-            text-align: center;
-            padding: 40px 20px;
-        }
-
-        .confirmation-icon {
-            width: 80px;
-            height: 80px;
-            background: #28a745;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 20px;
-            color: white;
-            font-size: 36px;
-        }
-
-        .confirmation-title {
-            font-size: 24px;
-            color: #4dabf7; /* AZUL CIELO para título de confirmación */
-            margin-bottom: 10px;
-            font-weight: 600;
-        }
-
-        .confirmation-message {
-            color: #666;
-            font-size: 16px;
-            line-height: 1.5;
-            margin-bottom: 30px;
-        }
-
-        .host-name {
-            color: #1e3a8a; /* Azul fuerte para nombres */
-            font-weight: 600;
-        }
-
         /* Progress bar */
         .progress-container {
             padding: 20px 30px 10px;
             background: #f8f9fa;
+            flex-shrink: 0;
         }
 
         .progress-bar {
             display: flex;
             justify-content: space-between;
             position: relative;
-            margin-bottom: 30px;
+            margin-bottom: 10px;
         }
 
         .progress-line {
@@ -340,7 +93,7 @@
             top: 15px;
             left: 0;
             height: 4px;
-            background: #28a745; /* VERDE para progreso completado */
+            background: #28a745;
             z-index: 2;
             transition: width 0.3s ease;
             width: 0%;
@@ -362,95 +115,276 @@
             border: 3px solid white;
         }
 
-            .progress-step.active {
-                background: #1e3a8a; /* Azul fuerte para paso activo */
-                transform: scale(1.1);
-                box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.3);
-            }
-
-            .progress-step.completed {
-                background: #28a745; /* VERDE para pasos completados */
-                transform: scale(1);
-                box-shadow: 0 0 0 3px rgba(40, 167, 69, 0.3);
-            }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .registro-container {
-                border-radius: 15px;
-                min-height: 500px;
-            }
-
-            .step {
-                padding: 30px 20px;
-            }
-
-            .step-title {
-                font-size: 24px;
-            }
-
-            .btn {
-                padding: 12px 25px;
-                min-width: 120px;
-                font-size: 15px;
-            }
-
-            .header {
-                padding: 15px 20px;
-            }
-
-            .photo-container {
-                width: 150px;
-                height: 150px;
-            }
-
-            .signature-canvas {
-                height: 120px;
-            }
+        .progress-step.active {
+            background: #1e3a8a;
+            transform: scale(1.1);
+            box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.3);
         }
 
-        @media (max-width: 480px) {
-            body {
-                padding: 10px;
-                background: white;
-            }
-
-            .registro-container {
-                border-radius: 10px;
-                box-shadow: none;
-            }
-
-            .step {
-                padding: 20px 15px;
-            }
-
-            .btn-container {
-                flex-direction: column;
-            }
-
-            .btn {
-                width: 100%;
-            }
-
-            .progress-bar {
-                margin-bottom: 20px;
-            }
-
-            .signature-actions {
-                flex-direction: column;
-            }
+        .progress-step.completed {
+            background: #28a745;
+            transform: scale(1);
+            box-shadow: 0 0 0 3px rgba(40, 167, 69, 0.3);
         }
 
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
+        /* Contenido de los pasos */
+        .step {
+            display: none;
+            flex: 1;
+            overflow: hidden;
+        }
 
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        .step.active {
+            display: flex;
+            flex-direction: column;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .step-content {
+            max-width: 500px;
+            margin: 0 auto;
+            text-align: center;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            padding: 20px 30px;
+        }
+
+        .step-title {
+            font-size: 28px;
+            color: #4dabf7;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .step-subtitle {
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        /* Formularios */
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #333;
+            font-size: 14px;
+        }
+
+        .form-input, .form-select {
+            width: 100%;
+            padding: 15px 20px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+            background: #f8f9fa;
+        }
+
+        .form-input:focus, .form-select:focus {
+            outline: none;
+            border-color: #4dabf7;
+            background: white;
+        }
+
+        /* Área de foto */
+        .photo-container {
+            width: 200px;
+            height: 200px;
+            margin: 0 auto 20px;
+            border: 3px dashed #ddd;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #f8f9fa;
+            cursor: pointer;
+            overflow: hidden;
+            position: relative;
+            flex-shrink: 0;
+        }
+
+        .photo-container:hover {
+            border-color: #4dabf7;
+        }
+
+        .photo-preview {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: none;
+        }
+
+        .photo-placeholder {
+            text-align: center;
+            color: #666;
+        }
+
+        .photo-placeholder i {
+            font-size: 48px;
+            margin-bottom: 10px;
+            color: #4dabf7;
+        }
+
+        .photo-text {
+            font-size: 14px;
+        }
+
+        /* Área de firma */
+        .signature-container {
+            border: 2px dashed #ddd;
+            border-radius: 10px;
+            padding: 15px;
+            background: #f8f9fa;
+            margin-bottom: 15px;
+            text-align: center;
+            flex-shrink: 0;
+        }
+
+        .signature-title {
+            font-size: 16px;
+            color: #333;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .signature-canvas {
+            width: 100%;
+            height: 120px;
+            border: 2px solid #ddd;
+            background: white;
+            border-radius: 8px;
+            cursor: crosshair;
+            touch-action: none;
+            display: block;
+        }
+
+        .signature-actions {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        .btn-clear {
+            background: #dc3545;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .btn-clear:hover {
+            background: #c82333;
+        }
+
+        .signature-notice {
+            font-size: 12px;
+            color: #666;
+            margin-top: 8px;
+            font-style: italic;
+        }
+
+        /* Botones */
+        .btn-container {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-top: auto;
+            padding-top: 20px;
+            flex-shrink: 0;
+        }
+
+        .btn {
+            padding: 15px 30px;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            min-width: 140px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .btn-primary {
+            background: #4dabf7;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #3a9ae0;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(77, 171, 247, 0.3);
+        }
+
+        .btn-secondary {
+            background: #f8f9fa;
+            color: #666;
+            border: 2px solid #e0e0e0;
+        }
+
+        .btn-secondary:hover {
+            background: #e9ecef;
+        }
+
+        /* Pantalla de confirmación */
+        .confirmation-container {
+            text-align: center;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .confirmation-icon {
+            width: 80px;
+            height: 80px;
+            background: #28a745;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: white;
+            font-size: 36px;
+            flex-shrink: 0;
+        }
+
+        .confirmation-title {
+            font-size: 24px;
+            color: #4dabf7;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .confirmation-message {
+            color: #666;
+            font-size: 16px;
+            line-height: 1.5;
+            margin-bottom: 30px;
+        }
+
+        .host-name {
+            color: #1e3a8a;
+            font-weight: 600;
         }
 
         /* Cámara */
@@ -507,19 +441,115 @@
             font-size: 18px;
             cursor: pointer;
         }
+
+        /* Media queries */
+        @media (max-width: 1024px) and (min-width: 768px) {
+            .registro-container {
+                height: 85vh;
+                min-height: 550px;
+                max-height: 700px;
+            }
+            
+            .step-content {
+                padding: 15px 25px;
+                max-width: 450px;
+            }
+            
+            .photo-container {
+                width: 180px;
+                height: 180px;
+                margin-bottom: 15px;
+            }
+            
+            .signature-canvas {
+                height: 100px;
+            }
+            
+            .btn {
+                padding: 12px 25px;
+                min-width: 130px;
+                font-size: 15px;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .registro-container {
+                height: 95vh;
+                min-height: 500px;
+                max-height: 650px;
+                border-radius: 15px;
+            }
+            
+            .step-content {
+                padding: 10px 20px;
+            }
+            
+            .header {
+                padding: 15px 20px;
+                min-height: 70px;
+            }
+            
+            .photo-container {
+                width: 150px;
+                height: 150px;
+            }
+            
+            .btn-container {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .btn {
+                width: 100%;
+            }
+        }
+
+        /* Estados específicos para pasos con mucho contenido */
+        .step[data-step="3"] .form-content,
+        .step[data-step="4"] .form-content {
+            justify-content: flex-start;
+            padding-top: 20px;
+        }
+
+        .step[data-step="3"] .step-title,
+        .step[data-step="4"] .step-title {
+            margin-bottom: 5px;
+        }
+
+        .step[data-step="3"] .step-subtitle,
+        .step[data-step="4"] .step-subtitle {
+            margin-bottom: 20px;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Asegurar que Font Awesome funcione */
+        .fas, .fa, .far, .fal, .fab {
+            font-family: 'Font Awesome 6 Free', 'Font Awesome 6 Brands' !important;
+            font-weight: 900;
+        }
     </style>
 </head>
 <body>
     <div class="registro-container">
-        <!-- Barra de progreso -->
+        <!-- Barra de progreso actualizada -->
         <div class="progress-container">
             <div class="progress-bar" id="progressBar">
                 <div class="progress-line"></div>
                 <div class="progress-completed" id="progressCompleted"></div>
 
                 <div class="progress-step completed" data-step="1">✓</div>
-                <div class="progress-step active" data-step="2">2</div>
-                <div class="progress-step" data-step="3">3</div>
+                <div class="progress-step completed" data-step="2">✓</div>
+                <div class="progress-step active" data-step="3">3</div>
                 <div class="progress-step" data-step="4">4</div>
                 <div class="progress-step" data-step="5">5</div>
                 <div class="progress-step" data-step="6">6</div>
@@ -528,7 +558,7 @@
 
         <!-- Header -->
         <div class="header">
-            <div class="time" id="currentTime">9:41</div>
+            <div class="time" id="currentTime"></div>
             <div class="logo">Joffroy®</div>
         </div>
 
@@ -540,7 +570,7 @@
 
                 <div class="form-group">
                     <label class="form-label">Nombre Completo *</label>
-                    <input type="text" class="form-input" placeholder="Ingresa tu nombre" id="nombreCompleto">
+                    <input type="text" class="form-input" placeholder="Ingresa tu nombre" id="nombre">
                 </div>
 
                 <div class="btn-container">
@@ -582,8 +612,8 @@
         <!-- Paso 3: Datos Personales -->
         <div class="step" id="step-datos" data-step="3">
             <div class="step-content">
-                <h2 class="step-title">Detalles personales</h2>
-                <p class="step-subtitle">Completa tu información de contacto</p>
+                <h2 class="step-title">Datos Personales</h2>
+                <p class="step-subtitle">Completa tu información personal</p>
 
                 <div class="form-group">
                     <label class="form-label">Tu dirección de correo electrónico</label>
@@ -594,6 +624,23 @@
                     <label class="form-label">Tu número de teléfono</label>
                     <input type="tel" class="form-input" placeholder="Ingresa tu número" id="telefono">
                 </div>
+
+                <div class="btn-container">
+                    <button class="btn btn-secondary" onclick="prevStep('step-sucursal')">
+                        <i class="fas fa-arrow-left"></i> Atrás
+                    </button>
+                    <button class="btn btn-primary" onclick="nextStep('step-motivo')">
+                        Continuar <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Paso 4: Motivo de la Visita -->
+        <div class="step" id="step-motivo" data-step="4">
+            <div class="step-content">
+                <h2 class="step-title">Detalles de la Visita</h2>
+                <p class="step-subtitle">Información sobre tu visita</p>
 
                 <div class="form-group">
                     <label class="form-label">Empresa de procedencia</label>
@@ -615,12 +662,12 @@
                 <div class="form-group">
                     <label class="form-label">Anfitrión *</label>
                     <select class="form-select" id="anfitrion">
-                        <option value="">Primero selecciona una sucursal</option>
+                        <option value="">Selecciona un anfitrión</option>
                     </select>
                 </div>
 
                 <div class="btn-container">
-                    <button class="btn btn-secondary" onclick="prevStep('step-sucursal')">
+                    <button class="btn btn-secondary" onclick="prevStep('step-datos')">
                         <i class="fas fa-arrow-left"></i> Atrás
                     </button>
                     <button class="btn btn-primary" onclick="nextStep('step-foto')">
@@ -630,8 +677,8 @@
             </div>
         </div>
 
-        <!-- Paso 4: Foto -->
-        <div class="step" id="step-foto" data-step="4">
+        <!-- Paso 5: Foto -->
+        <div class="step" id="step-foto" data-step="5">
             <div class="step-content">
                 <h2 class="step-title">Agregar Foto</h2>
                 <p class="step-subtitle">Toma una foto para completar tu registro</p>
@@ -645,7 +692,7 @@
                 </div>
 
                 <div class="btn-container">
-                    <button class="btn btn-secondary" onclick="prevStep('step-datos')">
+                    <button class="btn btn-secondary" onclick="prevStep('step-motivo')">
                         <i class="fas fa-arrow-left"></i> Atrás
                     </button>
                     <button class="btn btn-primary" onclick="nextStep('step-firma')">
@@ -655,8 +702,8 @@
             </div>
         </div>
 
-        <!-- Paso 5: Firma -->
-        <div class="step" id="step-firma" data-step="5">
+        <!-- Paso 6: Firma -->
+        <div class="step" id="step-firma" data-step="6">
             <div class="step-content">
                 <h2 class="step-title">Firma Digital</h2>
                 <p class="step-subtitle">Acuerdo de confidencialidad para visitantes</p>
@@ -683,17 +730,17 @@
             </div>
         </div>
 
-        <!-- Paso 6: Confirmación -->
-        <div class="step" id="step-confirmacion" data-step="6">
+        <!-- Paso 7: Confirmación -->
+        <div class="step" id="step-confirmacion" data-step="7">
             <div class="step-content">
                 <div class="confirmation-container">
                     <div class="confirmation-icon">
                         <i class="fas fa-check"></i>
                     </div>
-                    <h2 class="confirmation-title">¡Bienvenido <span id="confirmNombre">Nombre</span>!</h2>
-                    <p class="confirmation-message">
-                        Hemos informado a <span class="host-name" id="confirmAnfitrion">Leslie Pacheco</span><br>
-                        que estás aquí en la <span class="host-name" id="confirmSucursal">Sucursal Centro</span>.
+                    <h2 class="confirmation-title" id="confirmacionTitulo">¡Bienvenido!</h2>
+                    <p class="confirmation-message" id="confirmacionMensaje">
+                        Hemos informado a <span class="host-name" id="anfitrionConfirmacion">Leslie Pacheco</span><br>
+                        que estás aquí en la <span class="host-name" id="sucursalConfirmacion">sucursal</span>.
                     </p>
 
                     <div class="btn-container">
@@ -722,33 +769,207 @@
 
     <script>
         // Datos del visitante
-        let visitanteData = {};
-
-        // Datos de anfitriones por sucursal
-        const anfitrionesPorSucursal = {
-            'sucursal_centro': [
-                'Leslie Pacheco',
-                'Lic. Ramírez',
-                'Ing. Torres'
-            ],
-            'sucursal_norte': [
-                'Dr. Mendoza',
-                'Lic. García',
-                'Ing. López'
-            ],
-            'sucursal_sur': [
-                'Lic. Hernández',
-                'Ing. Martínez',
-                'Dr. Rodríguez'
-            ],
-            'sucursal_este': [
-                'Ing. Pérez',
-                'Lic. González',
-                'Dr. Sánchez'
-            ]
+        const visitanteData = {
+            nombre: '',
+            sucursal: '',
+            email: '',
+            telefono: '',
+            empresa: '',
+            motivo: '',
+            anfitrion: '',
+            foto: '',
+            firma: ''
         };
 
-        // Actualizar lista de anfitriones según la sucursal seleccionada
+        // Lista de anfitriones por sucursal
+        const anfitrionesPorSucursal = {
+            'sucursal_centro': ['Leslie Pacheco', 'Carlos Rodríguez', 'Ana Martínez'],
+            'sucursal_norte': ['María González', 'Pedro Sánchez', 'Laura Fernández'],
+            'sucursal_sur': ['José López', 'Carmen García', 'David Pérez'],
+            'sucursal_este': ['Sofía Ramírez', 'Miguel Torres', 'Elena Castro']
+        };
+
+        // Variables para el dibujo de la firma
+        let isDrawing = false;
+        let lastX = 0;
+        let lastY = 0;
+
+        // Variables para la cámara
+        let stream = null;
+
+        // Inicialización
+        document.addEventListener('DOMContentLoaded', function() {
+            updateTime();
+            setInterval(updateTime, 1000);
+            initializeSignatureCanvas();
+            updateProgressBar();
+        });
+
+        // Actualizar la hora actual
+        function updateTime() {
+            const now = new Date();
+            const timeString = now.toLocaleTimeString('es-ES', { 
+                hour: '2-digit', 
+                minute: '2-digit',
+                hour12: false 
+            });
+            document.getElementById('currentTime').textContent = timeString;
+        }
+
+        // Navegación entre pasos
+        function nextStep(nextStepId) {
+            // Validar datos antes de avanzar
+            if (!validateCurrentStep()) {
+                return;
+            }
+
+            // Guardar datos del paso actual
+            saveCurrentStepData();
+
+            // Ocultar paso actual
+            const currentStep = document.querySelector('.step.active');
+            currentStep.classList.remove('active');
+
+            // Mostrar siguiente paso
+            const nextStep = document.getElementById(nextStepId);
+            nextStep.classList.add('active');
+
+            // Actualizar barra de progreso
+            updateProgressBar();
+
+            // Si es el paso de confirmación, actualizar la información
+            if (nextStepId === 'step-confirmacion') {
+                updateConfirmationData();
+            }
+        }
+
+        function prevStep(prevStepId) {
+            // Ocultar paso actual
+            const currentStep = document.querySelector('.step.active');
+            currentStep.classList.remove('active');
+
+            // Mostrar paso anterior
+            const prevStep = document.getElementById(prevStepId);
+            prevStep.classList.add('active');
+
+            // Actualizar barra de progreso
+            updateProgressBar();
+        }
+
+        // Validar datos del paso actual
+        function validateCurrentStep() {
+            const currentStep = document.querySelector('.step.active');
+            const stepId = currentStep.id;
+
+            switch(stepId) {
+                case 'step-welcome':
+                    const nombre = document.getElementById('nombre').value.trim();
+                    if (!nombre) {
+                        alert('Por favor ingresa tu nombre completo');
+                        return false;
+                    }
+                    break;
+
+                case 'step-sucursal':
+                    const sucursal = document.getElementById('sucursal').value;
+                    if (!sucursal) {
+                        alert('Por favor selecciona una sucursal');
+                        return false;
+                    }
+                    break;
+
+                case 'step-motivo':
+                    const anfitrion = document.getElementById('anfitrion').value;
+                    if (!anfitrion) {
+                        alert('Por favor selecciona un anfitrión');
+                        return false;
+                    }
+                    break;
+
+                case 'step-firma':
+                    const canvas = document.getElementById('signatureCanvas');
+                    const ctx = canvas.getContext('2d');
+                    const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+                    let isEmpty = true;
+                    
+                    for (let i = 0; i < imageData.data.length; i += 4) {
+                        if (imageData.data[i + 3] !== 0) {
+                            isEmpty = false;
+                            break;
+                        }
+                    }
+                    
+                    if (isEmpty) {
+                        alert('Por favor proporciona tu firma');
+                        return false;
+                    }
+                    break;
+            }
+
+            return true;
+        }
+
+        // Guardar datos del paso actual
+        function saveCurrentStepData() {
+            const currentStep = document.querySelector('.step.active');
+            const stepId = currentStep.id;
+
+            switch(stepId) {
+                case 'step-welcome':
+                    visitanteData.nombre = document.getElementById('nombre').value.trim();
+                    break;
+
+                case 'step-sucursal':
+                    visitanteData.sucursal = document.getElementById('sucursal').value;
+                    break;
+
+                case 'step-datos':
+                    visitanteData.email = document.getElementById('email').value;
+                    visitanteData.telefono = document.getElementById('telefono').value;
+                    break;
+
+                case 'step-motivo':
+                    visitanteData.empresa = document.getElementById('empresa').value;
+                    visitanteData.motivo = document.getElementById('motivo').value;
+                    visitanteData.anfitrion = document.getElementById('anfitrion').value;
+                    break;
+
+                case 'step-firma':
+                    // Guardar la firma como imagen base64
+                    const canvas = document.getElementById('signatureCanvas');
+                    visitanteData.firma = canvas.toDataURL('image/png');
+                    break;
+            }
+        }
+
+        // Actualizar barra de progreso
+        function updateProgressBar() {
+            const currentStep = document.querySelector('.step.active');
+            const currentStepNumber = parseInt(currentStep.getAttribute('data-step'));
+            
+            // Actualizar pasos completados
+            const progressSteps = document.querySelectorAll('.progress-step');
+            progressSteps.forEach(step => {
+                const stepNumber = parseInt(step.getAttribute('data-step'));
+                
+                if (stepNumber < currentStepNumber) {
+                    step.classList.add('completed');
+                    step.classList.remove('active');
+                } else if (stepNumber === currentStepNumber) {
+                    step.classList.add('active');
+                    step.classList.remove('completed');
+                } else {
+                    step.classList.remove('active', 'completed');
+                }
+            });
+            
+            // Actualizar línea de progreso
+            const progressCompleted = document.getElementById('progressCompleted');
+            const progressPercentage = ((currentStepNumber - 1) / (progressSteps.length - 1)) * 100;
+            progressCompleted.style.width = `${progressPercentage}%`;
+        }
+
+        // Actualizar lista de anfitriones según sucursal seleccionada
         function updateAnfitriones() {
             const sucursalSelect = document.getElementById('sucursal');
             const anfitrionSelect = document.getElementById('anfitrion');
@@ -757,7 +978,7 @@
             // Limpiar opciones actuales
             anfitrionSelect.innerHTML = '<option value="">Selecciona un anfitrión</option>';
             
-            // Si hay una sucursal seleccionada, agregar sus anfitriones
+            // Agregar anfitriones según la sucursal
             if (sucursal && anfitrionesPorSucursal[sucursal]) {
                 anfitrionesPorSucursal[sucursal].forEach(anfitrion => {
                     const option = document.createElement('option');
@@ -768,367 +989,232 @@
             }
         }
 
-        // ========== SISTEMA DE FIRMA ==========
-        let isDrawing = false;
-        let lastX = 0;
-        let lastY = 0;
-        let signatureCanvas, signatureCtx;
-
-        function initializeSignature() {
-            signatureCanvas = document.getElementById('signatureCanvas');
-            signatureCtx = signatureCanvas.getContext('2d');
-
-            // Configurar tamaño del canvas
-            setupSignatureCanvasSize();
-
-            // Configurar estilo de dibujo
-            signatureCtx.lineWidth = 3;
-            signatureCtx.lineJoin = 'round';
-            signatureCtx.lineCap = 'round';
-            signatureCtx.strokeStyle = '#000000';
-
-            // Limpiar canvas con fondo blanco
-            clearSignature();
-
-            // Agregar event listeners
-            setupSignatureEventListeners();
+        // Inicializar canvas para firma
+        function initializeSignatureCanvas() {
+            const canvas = document.getElementById('signatureCanvas');
+            const ctx = canvas.getContext('2d');
+            
+            // Configurar canvas
+            canvas.width = canvas.offsetWidth;
+            canvas.height = canvas.offsetHeight;
+            
+            ctx.strokeStyle = '#000';
+            ctx.lineWidth = 2;
+            ctx.lineCap = 'round';
+            ctx.lineJoin = 'round';
+            
+            // Eventos para dibujar
+            canvas.addEventListener('mousedown', startDrawing);
+            canvas.addEventListener('mousemove', draw);
+            canvas.addEventListener('mouseup', stopDrawing);
+            canvas.addEventListener('mouseout', stopDrawing);
+            
+            // Eventos táctiles
+            canvas.addEventListener('touchstart', handleTouchStart);
+            canvas.addEventListener('touchmove', handleTouchMove);
+            canvas.addEventListener('touchend', stopDrawing);
         }
 
-        function setupSignatureCanvasSize() {
-            const containerWidth = signatureCanvas.parentElement.clientWidth;
-            signatureCanvas.width = containerWidth - 80; // Considerar padding
-            signatureCanvas.height = 150;
-        }
-
-        function setupSignatureEventListeners() {
-            // Eventos de Mouse
-            signatureCanvas.addEventListener('mousedown', startSignatureDrawing);
-            signatureCanvas.addEventListener('mousemove', drawSignature);
-            signatureCanvas.addEventListener('mouseup', stopSignatureDrawing);
-            signatureCanvas.addEventListener('mouseout', stopSignatureDrawing);
-
-            // Eventos de Touch
-            signatureCanvas.addEventListener('touchstart', handleSignatureTouchStart);
-            signatureCanvas.addEventListener('touchmove', handleSignatureTouchMove);
-            signatureCanvas.addEventListener('touchend', stopSignatureDrawing);
-        }
-
-        function getSignatureCanvasPosition(e) {
-            const rect = signatureCanvas.getBoundingClientRect();
-            let x, y;
-
-            if (e.type.includes('touch')) {
-                x = e.touches[0].clientX - rect.left;
-                y = e.touches[0].clientY - rect.top;
-            } else {
-                x = e.clientX - rect.left;
-                y = e.clientY - rect.top;
-            }
-
-            return { x, y };
-        }
-
-        function startSignatureDrawing(e) {
-            e.preventDefault();
+        // Funciones para dibujar firma
+        function startDrawing(e) {
             isDrawing = true;
-            const pos = getSignatureCanvasPosition(e);
-            [lastX, lastY] = [pos.x, pos.y];
-
-            // Comenzar nuevo trazo
-            signatureCtx.beginPath();
-            signatureCtx.moveTo(lastX, lastY);
+            const canvas = document.getElementById('signatureCanvas');
+            const rect = canvas.getBoundingClientRect();
+            
+            if (e.type === 'mousedown') {
+                lastX = e.clientX - rect.left;
+                lastY = e.clientY - rect.top;
+            }
         }
 
-        function drawSignature(e) {
+        function draw(e) {
             if (!isDrawing) return;
-            e.preventDefault();
-
-            const pos = getSignatureCanvasPosition(e);
-            const currentX = pos.x;
-            const currentY = pos.y;
-
-            // Dibujar línea
-            signatureCtx.lineTo(currentX, currentY);
-            signatureCtx.stroke();
-
-            // Actualizar última posición
-            [lastX, lastY] = [currentX, currentY];
+            
+            const canvas = document.getElementById('signatureCanvas');
+            const ctx = canvas.getContext('2d');
+            const rect = canvas.getBoundingClientRect();
+            
+            let currentX, currentY;
+            
+            if (e.type === 'mousemove') {
+                currentX = e.clientX - rect.left;
+                currentY = e.clientY - rect.top;
+            }
+            
+            ctx.beginPath();
+            ctx.moveTo(lastX, lastY);
+            ctx.lineTo(currentX, currentY);
+            ctx.stroke();
+            
+            lastX = currentX;
+            lastY = currentY;
         }
 
-        function handleSignatureTouchStart(e) {
-            startSignatureDrawing(e);
-        }
-
-        function handleSignatureTouchMove(e) {
-            drawSignature(e);
-        }
-
-        function stopSignatureDrawing() {
+        function stopDrawing() {
             isDrawing = false;
         }
 
+        // Manejo de eventos táctiles para firma
+        function handleTouchStart(e) {
+            e.preventDefault();
+            const canvas = document.getElementById('signatureCanvas');
+            const rect = canvas.getBoundingClientRect();
+            const touch = e.touches[0];
+            
+            isDrawing = true;
+            lastX = touch.clientX - rect.left;
+            lastY = touch.clientY - rect.top;
+        }
+
+        function handleTouchMove(e) {
+            e.preventDefault();
+            if (!isDrawing) return;
+            
+            const canvas = document.getElementById('signatureCanvas');
+            const ctx = canvas.getContext('2d');
+            const rect = canvas.getBoundingClientRect();
+            const touch = e.touches[0];
+            
+            const currentX = touch.clientX - rect.left;
+            const currentY = touch.clientY - rect.top;
+            
+            ctx.beginPath();
+            ctx.moveTo(lastX, lastY);
+            ctx.lineTo(currentX, currentY);
+            ctx.stroke();
+            
+            lastX = currentX;
+            lastY = currentY;
+        }
+
+        // Limpiar firma
         function clearSignature() {
-            signatureCtx.fillStyle = 'white';
-            signatureCtx.fillRect(0, 0, signatureCanvas.width, signatureCanvas.height);
-            signatureCtx.beginPath();
+            const canvas = document.getElementById('signatureCanvas');
+            const ctx = canvas.getContext('2d');
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
         }
 
-        function isSignatureDrawn() {
-            const imageData = signatureCtx.getImageData(0, 0, signatureCanvas.width, signatureCanvas.height);
-            const data = imageData.data;
-
-            // Verificar si hay píxeles no blancos
-            for (let i = 0; i < data.length; i += 4) {
-                if (data[i] !== 255 || data[i + 1] !== 255 || data[i + 2] !== 255) {
-                    return true;
-                }
-            }
-            return false;
-        }
-        // ========== FIN SISTEMA DE FIRMA ==========
-
-        // ========== SISTEMA DE PROGRESS BAR ==========
-        function updateProgressBar(stepId) {
-            const steps = document.querySelectorAll('.progress-step');
-            const progressCompleted = document.getElementById('progressCompleted');
-
-            // Obtener el número del paso actual
-            const currentStep = document.querySelector(`#${stepId}`);
-            const stepNumber = parseInt(currentStep.dataset.step);
-
-            // Calcular el porcentaje completado
-            const totalSteps = steps.length;
-            const completedWidth = ((stepNumber - 1) / (totalSteps - 1)) * 100;
-
-            // Actualizar la línea de progreso
-            progressCompleted.style.width = completedWidth + '%';
-
-            // Actualizar estados de los pasos
-            steps.forEach((step, index) => {
-                const stepNum = parseInt(step.dataset.step);
-                step.classList.remove('active', 'completed');
-
-                if (stepNum < stepNumber) {
-                    step.classList.add('completed');
-                    step.innerHTML = '✓';
-                } else if (stepNum === stepNumber) {
-                    step.classList.add('active');
-                    step.innerHTML = stepNum;
-                } else {
-                    step.innerHTML = stepNum;
-                }
-            });
-        }
-        // ========== FIN SISTEMA DE PROGRESS BAR ==========
-
-        // Actualizar hora en tiempo real
-        function updateTime() {
-            const now = new Date();
-            const timeString = now.getHours() + ':' + now.getMinutes().toString().padStart(2, '0');
-            document.getElementById('currentTime').textContent = timeString;
-        }
-        setInterval(updateTime, 60000);
-        updateTime();
-
-        // Navegación entre pasos
-        function nextStep(nextStepId) {
-            const currentStep = document.querySelector('.step.active');
-            const nextStep = document.getElementById(nextStepId);
-
-            if (validateStep(currentStep.id)) {
-                // Guardar datos antes de cambiar
-                saveStepData(currentStep.id);
-
-                currentStep.classList.remove('active');
-                nextStep.classList.add('active');
-                updateProgressBar(nextStepId);
-
-                // Actualizar confirmación si es el último paso
-                if (nextStepId === 'step-confirmacion') {
-                    updateConfirmation();
-                }
-            }
-        }
-
-        function prevStep(prevStepId) {
-            const currentStep = document.querySelector('.step.active');
-            const prevStep = document.getElementById(prevStepId);
-
-            currentStep.classList.remove('active');
-            prevStep.classList.add('active');
-            updateProgressBar(prevStepId);
-        }
-
-        // Guardar datos del paso actual
-        function saveStepData(stepId) {
-            if (stepId === 'step-welcome') {
-                visitanteData.nombre = document.getElementById('nombreCompleto').value;
-            } else if (stepId === 'step-sucursal') {
-                visitanteData.sucursal = document.getElementById('sucursal').value;
-            } else if (stepId === 'step-datos') {
-                visitanteData.email = document.getElementById('email').value;
-                visitanteData.telefono = document.getElementById('telefono').value;
-                visitanteData.empresa = document.getElementById('empresa').value;
-                visitanteData.motivo = document.getElementById('motivo').value;
-                visitanteData.anfitrion = document.getElementById('anfitrion').value;
-            } else if (stepId === 'step-firma') {
-                // Guardar firma como imagen
-                visitanteData.firma = signatureCanvas.toDataURL('image/png');
-            }
-        }
-
-        // Validación de campos
-        function validateStep(stepId) {
-            if (stepId === 'step-welcome') {
-                const nombre = document.getElementById('nombreCompleto').value.trim();
-                if (!nombre) {
-                    alert('Por favor ingresa tu nombre completo');
-                    return false;
-                }
-            } else if (stepId === 'step-sucursal') {
-                const sucursal = document.getElementById('sucursal').value;
-                if (!sucursal) {
-                    alert('Por favor selecciona una sucursal');
-                    return false;
-                }
-            } else if (stepId === 'step-datos') {
-                const anfitrion = document.getElementById('anfitrion').value;
-                if (!anfitrion) {
-                    alert('Por favor selecciona un anfitrión');
-                    return false;
-                }
-            } else if (stepId === 'step-foto') {
-                const photoPreview = document.getElementById('photoPreview');
-                if (photoPreview.style.display !== 'block') {
-                    alert('Por favor toma una foto antes de continuar');
-                    return false;
-                }
-            } else if (stepId === 'step-firma') {
-                // Verificar que se haya dibujado una firma
-                if (!isSignatureDrawn()) {
-                    alert('Por favor dibuja tu firma antes de continuar');
-                    return false;
-                }
-            }
-            return true;
-        }
-
-        // Cámara
-        let stream = null;
-
+        // Funciones para la cámara
         function openCamera() {
             const cameraContainer = document.getElementById('cameraContainer');
-            const video = document.getElementById('cameraVideo');
-
             cameraContainer.style.display = 'block';
-
+            
             navigator.mediaDevices.getUserMedia({ video: true })
-                .then(function (mediaStream) {
+                .then(function(mediaStream) {
                     stream = mediaStream;
+                    const video = document.getElementById('cameraVideo');
                     video.srcObject = mediaStream;
                 })
-                .catch(function (error) {
-                    console.error('Error al acceder a la cámara:', error);
-                    alert('No se pudo acceder a la cámara. Permite el acceso a la cámara en tu navegador.');
+                .catch(function(err) {
+                    console.error('Error al acceder a la cámara:', err);
+                    alert('No se pudo acceder a la cámara. Por favor, verifica los permisos.');
                     closeCamera();
                 });
         }
 
         function closeCamera() {
             const cameraContainer = document.getElementById('cameraContainer');
-            const video = document.getElementById('cameraVideo');
-
+            cameraContainer.style.display = 'none';
+            
             if (stream) {
                 stream.getTracks().forEach(track => track.stop());
                 stream = null;
             }
-
-            video.srcObject = null;
-            cameraContainer.style.display = 'none';
         }
 
         function takePhoto() {
             const video = document.getElementById('cameraVideo');
             const canvas = document.getElementById('cameraCanvas');
-            const context = canvas.getContext('2d');
             const photoPreview = document.getElementById('photoPreview');
-
-            // Ajustar canvas al tamaño del video
+            
             canvas.width = video.videoWidth;
             canvas.height = video.videoHeight;
-
-            // Dibujar frame actual del video en el canvas
-            context.drawImage(video, 0, 0, canvas.width, canvas.height);
-
-            // Convertir a data URL y mostrar preview
+            
+            const ctx = canvas.getContext('2d');
+            ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+            
+            // Mostrar vista previa
             photoPreview.src = canvas.toDataURL('image/png');
             photoPreview.style.display = 'block';
-
+            
             // Ocultar placeholder
-            document.querySelector('.photo-placeholder').style.display = 'none';
-
+            const photoPlaceholder = document.querySelector('.photo-placeholder');
+            photoPlaceholder.style.display = 'none';
+            
+            // Guardar foto en datos
+            visitanteData.foto = canvas.toDataURL('image/png');
+            
             // Cerrar cámara
             closeCamera();
         }
 
-        // Actualizar pantalla de confirmación
-        function updateConfirmation() {
-            document.getElementById('confirmNombre').textContent = visitanteData.nombre || 'Visitante';
-            document.getElementById('confirmAnfitrion').textContent = visitanteData.anfitrion || 'el anfitrión';
+        // Actualizar datos de confirmación
+        function updateConfirmationData() {
+            const nombre = visitanteData.nombre || 'Nombre';
+            const anfitrion = visitanteData.anfitrion || 'Leslie Pacheco';
+            const sucursal = visitanteData.sucursal || 'sucursal_centro';
             
-            // Mostrar sucursal seleccionada
-            const sucursalSelect = document.getElementById('sucursal');
-            const selectedOption = sucursalSelect.options[sucursalSelect.selectedIndex];
-            document.getElementById('confirmSucursal').textContent = selectedOption.text || 'la sucursal';
+            document.getElementById('confirmacionTitulo').textContent = `¡Bienvenido ${nombre}!`;
+            document.getElementById('anfitrionConfirmacion').textContent = anfitrion;
+            
+            // Traducir código de sucursal a nombre legible
+            let nombreSucursal = 'la sucursal';
+            switch(sucursal) {
+                case 'sucursal_centro': nombreSucursal = 'Sucursal Centro'; break;
+                case 'sucursal_norte': nombreSucursal = 'Sucursal Norte'; break;
+                case 'sucursal_sur': nombreSucursal = 'Sucursal Sur'; break;
+                case 'sucursal_este': nombreSucursal = 'Sucursal Este'; break;
+            }
+            
+            document.getElementById('sucursalConfirmacion').textContent = nombreSucursal;
         }
 
         // Finalizar registro
         function finalizarRegistro() {
-            // Aquí enviarías los datos al servidor
+            // Aquí iría la lógica para enviar los datos al servidor
             console.log('Datos del visitante:', visitanteData);
-
-            alert('¡Registro completado exitosamente! El anfitrión ha sido notificado.');
-
+            
+            alert('¡Registro completado con éxito!');
+            
             // Reiniciar formulario
             resetForm();
+            
+            // Volver al primer paso
+            const currentStep = document.querySelector('.step.active');
+            currentStep.classList.remove('active');
+            document.getElementById('step-welcome').classList.add('active');
+            
+            // Actualizar barra de progreso
+            updateProgressBar();
         }
 
+        // Reiniciar formulario
         function resetForm() {
-            // Limpiar formularios
-            document.querySelectorAll('.form-input').forEach(input => input.value = '');
+            // Limpiar datos
+            Object.keys(visitanteData).forEach(key => {
+                visitanteData[key] = '';
+            });
+            
+            // Limpiar campos de formulario
+            document.getElementById('nombre').value = '';
             document.getElementById('sucursal').value = '';
-            document.getElementById('anfitrion').innerHTML = '<option value="">Primero selecciona una sucursal</option>';
+            document.getElementById('email').value = '';
+            document.getElementById('telefono').value = '';
+            document.getElementById('empresa').value = '';
             document.getElementById('motivo').value = '';
-
+            document.getElementById('anfitrion').innerHTML = '<option value="">Selecciona un anfitrión</option>';
+            
             // Limpiar foto
             const photoPreview = document.getElementById('photoPreview');
             photoPreview.style.display = 'none';
             photoPreview.src = '';
-            document.querySelector('.photo-placeholder').style.display = 'block';
-
+            
+            const photoPlaceholder = document.querySelector('.photo-placeholder');
+            photoPlaceholder.style.display = 'flex';
+            
             // Limpiar firma
             clearSignature();
-
-            // Reiniciar progreso
-            document.querySelector('.step.active').classList.remove('active');
-            document.getElementById('step-welcome').classList.add('active');
-            updateProgressBar('step-welcome');
-
-            // Limpiar datos
-            visitanteData = {};
         }
-
-        // Inicializar cuando el DOM esté listo
-        document.addEventListener('DOMContentLoaded', function () {
-            initializeSignature();
-            updateProgressBar('step-welcome');
-
-            // Redimensionar canvas cuando cambie el tamaño de la ventana
-            window.addEventListener('resize', function () {
-                setupSignatureCanvasSize();
-                clearSignature();
-            });
-        });
     </script>
 </body>
 </html>
