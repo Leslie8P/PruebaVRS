@@ -109,14 +109,14 @@
             font-size: 12px;
         }
 
-        .progress-step.active {
-            background: #1e3a8a;
-            transform: scale(1.1);
-        }
+            .progress-step.active {
+                background: #1e3a8a;
+                transform: scale(1.1);
+            }
 
-        .progress-step.completed {
-            background: #28a745;
-        }
+            .progress-step.completed {
+                background: #28a745;
+            }
 
         /* Contenido de los pasos */
         .step {
@@ -125,10 +125,10 @@
             min-height: calc(100vh - 140px);
         }
 
-        .step.active {
-            display: block;
-            animation: fadeIn 0.5s ease;
-        }
+            .step.active {
+                display: block;
+                animation: fadeIn 0.5s ease;
+            }
 
         .step-content {
             max-width: 100%;
@@ -177,11 +177,11 @@
             background: #f8f9fa;
         }
 
-        .form-input:focus {
-            outline: none;
-            border-color: #4dabf7;
-            background: white;
-        }
+            .form-input:focus {
+                outline: none;
+                border-color: #4dabf7;
+                background: white;
+            }
 
         .form-select {
             width: 100%;
@@ -208,9 +208,9 @@
             position: relative;
         }
 
-        .photo-container:hover {
-            border-color: #4dabf7;
-        }
+            .photo-container:hover {
+                border-color: #4dabf7;
+            }
 
         .photo-preview {
             width: 100%;
@@ -224,11 +224,11 @@
             color: #666;
         }
 
-        .photo-placeholder i {
-            font-size: 40px;
-            margin-bottom: 10px;
-            color: #4dabf7;
-        }
+            .photo-placeholder i {
+                font-size: 40px;
+                margin-bottom: 10px;
+                color: #4dabf7;
+            }
 
         .photo-text {
             font-size: 14px;
@@ -282,9 +282,9 @@
             gap: 5px;
         }
 
-        .btn-clear:hover {
-            background: #c82333;
-        }
+            .btn-clear:hover {
+                background: #c82333;
+            }
 
         .signature-notice {
             font-size: 12px;
@@ -323,9 +323,9 @@
             color: white;
         }
 
-        .btn-primary:hover {
-            background: #3a9ae0;
-        }
+            .btn-primary:hover {
+                background: #3a9ae0;
+            }
 
         .btn-secondary {
             background: #f8f9fa;
@@ -333,9 +333,9 @@
             border: 2px solid #e0e0e0;
         }
 
-        .btn-secondary:hover {
-            background: #e9ecef;
-        }
+            .btn-secondary:hover {
+                background: #e9ecef;
+            }
 
         /* Pantalla de confirmación */
         .confirmation-container {
@@ -434,6 +434,161 @@
             cursor: pointer;
         }
 
+        /* Estilos para el acuerdo de confidencialidad */
+        .confidentiality-agreement {
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            background: #f8f9fa;
+            margin-bottom: 25px;
+            max-height: 400px;
+            overflow-y: auto;
+            padding: 0;
+        }
+
+        .agreement-header {
+            background: #1e3a8a;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 8px 8px 0 0;
+        }
+
+            .agreement-header h3 {
+                font-size: 18px;
+                margin-bottom: 5px;
+                font-weight: 600;
+            }
+
+        .company-name {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        .agreement-content {
+            padding: 20px;
+        }
+
+        .agreement-section {
+            margin-bottom: 20px;
+        }
+
+            .agreement-section h4 {
+                color: #1e3a8a;
+                font-size: 14px;
+                margin-bottom: 8px;
+                font-weight: 600;
+            }
+
+            .agreement-section p {
+                font-size: 13px;
+                line-height: 1.5;
+                color: #333;
+                margin-bottom: 8px;
+                text-align: justify;
+            }
+
+        .agreement-intro {
+            font-style: italic;
+            background: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            border-left: 3px solid #1e3a8a;
+        }
+
+        .agreement-note {
+            background: #fff3cd;
+            padding: 8px 12px;
+            border-radius: 5px;
+            border-left: 3px solid #ffc107;
+            font-size: 12px !important;
+        }
+
+        .agreement-list {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+
+            .agreement-list li {
+                font-size: 13px;
+                line-height: 1.5;
+                color: #333;
+                margin-bottom: 5px;
+            }
+
+        .agreement-signature-data {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 15px;
+            margin-top: 20px;
+        }
+
+        .signature-info {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .signature-field {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .field-label {
+            font-weight: 600;
+            color: #333;
+            min-width: 120px;
+            font-size: 13px;
+        }
+
+        .field-value {
+            color: #666;
+            font-size: 13px;
+            flex: 1;
+        }
+
+        .name-value {
+            color: #1e3a8a;
+            font-weight: 600;
+        }
+
+        /* Scroll personalizado para el acuerdo */
+        .confidentiality-agreement::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .confidentiality-agreement::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 3px;
+        }
+
+        .confidentiality-agreement::-webkit-scrollbar-thumb {
+            background: #c1c1c1;
+            border-radius: 3px;
+        }
+
+            .confidentiality-agreement::-webkit-scrollbar-thumb:hover {
+                background: #a8a8a8;
+            }
+
+        /* Estilos para la etiqueta (oculta) */
+        .etiqueta-print {
+            display: none;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
         /* Media queries para tabletas */
         @media (min-width: 768px) and (max-width: 1024px) {
             .registro-container {
@@ -443,11 +598,11 @@
                 box-shadow: 0 5px 20px rgba(0,0,0,0.1);
                 min-height: auto;
             }
-            
+
             .step {
                 min-height: 500px;
             }
-            
+
             .header {
                 border-radius: 15px 15px 0 0;
             }
@@ -458,45 +613,34 @@
             .header {
                 padding: 15px;
             }
-            
+
             .progress-container {
                 padding: 10px 15px 5px;
             }
-            
+
             .step {
                 padding: 20px 15px;
                 min-height: calc(100vh - 120px);
             }
-            
+
             .step-title {
                 font-size: 22px;
             }
-            
+
             .photo-container {
                 width: 150px;
                 height: 150px;
             }
-            
+
             .btn {
                 padding: 12px 15px;
                 font-size: 15px;
             }
-            
+
             .progress-step {
                 width: 26px;
                 height: 26px;
                 font-size: 10px;
-            }
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
             }
         }
     </style>
@@ -508,19 +652,19 @@
             <div class="progress-bar" id="progressBar">
                 <div class="progress-line"></div>
                 <div class="progress-completed" id="progressCompleted"></div>
+
                 <div class="progress-step completed" data-step="1">✓</div>
                 <div class="progress-step completed" data-step="2">✓</div>
                 <div class="progress-step active" data-step="3">3</div>
                 <div class="progress-step" data-step="4">4</div>
                 <div class="progress-step" data-step="5">5</div>
                 <div class="progress-step" data-step="6">6</div>
-                <div class="progress-step" data-step="7">7</div>
             </div>
         </div>
 
         <!-- Header -->
         <div class="header">
-            <div class="time" id="currentTime">9:41</div>
+            <div class="time" id="currentTime"></div>
             <div class="logo">Joffroy®</div>
         </div>
 
@@ -532,7 +676,7 @@
 
                 <div class="form-group">
                     <label class="form-label">Nombre Completo *</label>
-                    <input type="text" class="form-input" placeholder="Ingresa tu nombre" id="nombreCompleto">
+                    <input type="text" class="form-input" placeholder="Ingresa tu nombre" id="nombre">
                 </div>
 
                 <div class="btn-container">
@@ -667,12 +811,109 @@
         <!-- Paso 6: Firma -->
         <div class="step" id="step-firma" data-step="6">
             <div class="step-content">
-                <h2 class="step-title">Firma Digital</h2>
-                <p class="step-subtitle">Acuerdo de confidencialidad para visitantes</p>
+                <h2 class="step-title">Acuerdo de Confidencialidad</h2>
+                <p class="step-subtitle">Lee y firma el siguiente acuerdo</p>
 
+                <!-- Contenedor del acuerdo -->
+                <div class="confidentiality-agreement">
+                    <div class="agreement-header">
+                        <h3>ACUERDO DE CONFIDENCIALIDAD PARA VISITANTES</h3>
+                        <p class="company-name">EMPRESAS JOFFROY Y COMPAÑÍA S.C. (en adelante "JOFFROY")</p>
+                    </div>
+
+                    <div class="agreement-content">
+                        <div class="agreement-section">
+                            <p class="agreement-intro">
+                                solicita a todo visitante que, por motivo de ingreso a sus instalaciones o participación en reuniones,
+                                firme el presente Acuerdo de Confidencialidad, mediante el cual se compromete a respetar los lineamientos
+                                de confidencialidad establecidos por la empresa y su grupo corporativo.
+                            </p>
+                        </div>
+
+                        <div class="agreement-section">
+                            <h4>1. Definición de Información Confidencial</h4>
+                            <p>
+                                Se considera Información Confidencial toda aquella información técnica, operativa, comercial,
+                                financiera o legal perteneciente a JOFFROY, sus clientes o empresas del grupo, así como cualquier
+                                dato, imagen, documento o conversación a la que el visitante tenga acceso durante su estancia.
+                            </p>
+                            <p class="agreement-note">
+                                Esta información incluye, pero no se limita a: procedimientos internos, estrategias de negocio,
+                                información de clientes, proveedores, empleados, contraseñas, listas de precios, proyectos o
+                                cualquier dato no público.
+                            </p>
+                        </div>
+
+                        <div class="agreement-section">
+                            <h4>2. Obligación de Confidencialidad</h4>
+                            <p>
+                                El visitante se compromete a no divulgar, copiar o reproducir información obtenida durante su visita,
+                                ni a utilizarla directa o indirectamente para beneficio propio o de terceros.
+                            </p>
+                            <p class="agreement-note">
+                                El deber de confidencialidad permanece vigente incluso después de terminada la visita o relación con JOFFROY.
+                            </p>
+                        </div>
+
+                        <div class="agreement-section">
+                            <h4>3. Protección y Cuidado</h4>
+                            <p>El visitante deberá:</p>
+                            <ul class="agreement-list">
+                                <li>Evitar compartir información con personas ajenas a JOFFROY.</li>
+                                <li>No tomar fotografías, grabar audio o video sin autorización escrita.</li>
+                                <li>Reportar a JOFFROY cualquier incidente de divulgación o pérdida de información.</li>
+                            </ul>
+                        </div>
+
+                        <div class="agreement-section">
+                            <h4>4. Propiedad de la Información</h4>
+                            <p>
+                                Toda la información a la que el visitante tenga acceso es propiedad exclusiva de JOFFROY o sus clientes.
+                                Este documento no otorga ningún derecho de uso o licencia sobre dicha información.
+                            </p>
+                        </div>
+
+                        <div class="agreement-section">
+                            <h4>5. Consecuencias de Incumplimiento</h4>
+                            <p>
+                                El visitante reconoce que cualquier uso o divulgación indebida de información confidencial podrá
+                                ocasionar daños y perjuicios a JOFFROY, susceptibles de acciones legales conforme a las leyes
+                                mexicanas aplicables.
+                            </p>
+                        </div>
+
+                        <div class="agreement-section">
+                            <h4>6. Vigencia</h4>
+                            <p>
+                                Este acuerdo entra en vigor a partir de la fecha de firma y permanecerá vigente durante y después
+                                de la visita, sin límite de tiempo.
+                            </p>
+                        </div>
+
+                        <!-- Datos del visitante para el PDF -->
+                        <div class="agreement-signature-data">
+                            <div class="signature-info">
+                                <div class="signature-field">
+                                    <span class="field-label">Lugar:</span>
+                                    <span class="field-value">Nogales, Sonora</span>
+                                </div>
+                                <div class="signature-field">
+                                    <span class="field-label">Fecha:</span>
+                                    <span class="field-value" id="currentDate"></span>
+                                </div>
+                                <div class="signature-field">
+                                    <span class="field-label">Nombre Completo:</span>
+                                    <span class="field-value name-value" id="nombreAcuerdo">________________________________</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Área de firma digital -->
                 <div class="signature-container">
-                    <div class="signature-title">Dibuja tu firma *</div>
-                    <canvas class="signature-canvas" id="signatureCanvas"></canvas>
+                    <div class="signature-title">Firma Digital del Visitante *</div>
+                    <canvas id="signatureCanvas" class="signature-canvas"></canvas>
                     <div class="signature-actions">
                         <button class="btn-clear" onclick="clearSignature()">
                             <i class="fas fa-eraser"></i> Limpiar Firma
@@ -686,7 +927,7 @@
                         <i class="fas fa-arrow-left"></i> Atrás
                     </button>
                     <button class="btn btn-primary" onclick="nextStep('step-confirmacion')">
-                        Continuar <i class="fas fa-arrow-right"></i>
+                        Aceptar y Continuar <i class="fas fa-arrow-right"></i>
                     </button>
                 </div>
             </div>
@@ -699,15 +940,15 @@
                     <div class="confirmation-icon">
                         <i class="fas fa-check"></i>
                     </div>
-                    <h2 class="confirmation-title">¡Bienvenido <span id="confirmNombre">Nombre</span>!</h2>
-                    <p class="confirmation-message">
-                        Hemos informado a <span class="host-name" id="confirmAnfitrion">Leslie Pacheco</span><br>
-                        que estás aquí en la <span class="host-name" id="confirmSucursal">sucursal</span>.
+                    <h2 class="confirmation-title" id="confirmacionTitulo">¡Bienvenido!</h2>
+                    <p class="confirmation-message" id="confirmacionMensaje">
+                        Hemos informado a <span class="host-name" id="anfitrionConfirmacion">Leslie Pacheco</span><br>
+                        que estás aquí en la <span class="host-name" id="sucursalConfirmacion">Sucursal Centro</span>.
                     </p>
 
                     <div class="btn-container">
-                        <button class="btn btn-primary" onclick="finalizarRegistro()">
-                            Finalizar <i class="fas fa-check"></i>
+                        <button class="btn btn-primary" onclick="descargarEtiqueta()">
+                            <i class="fas fa-download"></i> Descargar Etiqueta
                         </button>
                     </div>
                 </div>
@@ -716,7 +957,7 @@
 
         <!-- Cámara -->
         <div class="camera-container" id="cameraContainer">
-            <video class="camera-video" id="cameraVideo" autoplay></video>
+            <video id="cameraVideo" class="camera-video" autoplay></video>
             <canvas id="cameraCanvas" style="display: none;"></canvas>
             <button class="camera-close" onclick="closeCamera()">
                 <i class="fas fa-times"></i>
@@ -727,162 +968,135 @@
                 </button>
             </div>
         </div>
+
+        <!-- Etiqueta oculta para impresión -->
+        <div id="etiquetaPrint" class="etiqueta-print">
+            <div style="width: 400px; padding: 20px; font-family: Arial, sans-serif;">
+                <div style="text-align: center; margin-bottom: 20px;">
+                    <div style="font-size: 28px; font-weight: bold; color: #1e3a8a;">JOFFROY</div>
+                    <div style="font-size: 16px; font-weight: 600;">VISITANTE</div>
+                </div>
+
+                <div style="height: 2px; background: #1e3a8a; margin: 15px 0;"></div>
+
+                <div style="margin-bottom: 15px;">
+                    <div style="font-size: 18px; font-weight: bold; margin-bottom: 5px;">NOMBRE</div>
+                    <div style="font-size: 16px;" id="printNombre"></div>
+                </div>
+
+                <div style="margin-bottom: 10px;">
+                    <div style="font-size: 14px; font-weight: 600; margin-bottom: 3px;">EMPRESA</div>
+                    <div style="font-size: 16px;" id="printEmpresa"></div>
+                </div>
+
+                <div style="margin-bottom: 10px;">
+                    <div style="font-size: 14px; font-weight: 600; margin-bottom: 3px;">MOTIVO</div>
+                    <div style="font-size: 16px;" id="printMotivo"></div>
+                </div>
+
+                <div style="margin-bottom: 15px;">
+                    <div style="font-size: 14px; font-weight: 600; margin-bottom: 3px;">ANFITRIÓN</div>
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <div style="font-size: 16px; font-weight: 600;" id="printAnfitrion"></div>
+                        <div style="font-size: 14px; font-weight: bold; color: #1e3a8a;" id="printCodigo"></div>
+                    </div>
+                </div>
+
+                <div style="height: 2px; background: #1e3a8a; margin: 15px 0;"></div>
+
+                <div style="margin-top: 20px; padding-top: 15px; border-top: 1px solid #ddd;">
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+                        <div style="font-size: 14px; font-weight: 600;" id="printFecha"></div>
+                        <div style="font-size: 14px; font-weight: 600;" id="printHora"></div>
+                    </div>
+                    <div style="font-size: 14px; font-weight: 600; margin-bottom: 15px;" id="printSucursal"></div>
+
+                    <div style="font-size: 12px; color: #666; line-height: 1.4; text-align: center; margin-top: 15px;">
+                        • Use esta etiqueta durante su visita<br>
+                        • Escanee el QR al salir<br>
+                        • Devuelva la etiqueta en recepción
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <script>
-        // Datos del visitante
-        let visitanteData = {};
-
-        // Lista de anfitriones por sucursal
-        const anfitrionesPorSucursal = {
-            'sucursal_centro': ['Leslie Pacheco', 'Carlos Rodríguez', 'Ana Martínez'],
-            'sucursal_norte': ['María González', 'Pedro Sánchez', 'Laura Fernández'],
-            'sucursal_sur': ['José López', 'Carmen García', 'David Pérez'],
-            'sucursal_este': ['Sofía Ramírez', 'Miguel Torres', 'Elena Castro']
-        };
-
-        // ========== SISTEMA DE FIRMA ==========
+        // Variables globales
+        let currentStep = 'step-welcome';
+        let timeInterval;
         let isDrawing = false;
         let lastX = 0;
         let lastY = 0;
-        let signatureCanvas, signatureCtx;
+        let signatureCtx = null;
+        let stream = null;
+        let isCameraOpen = false;
 
-        function initializeSignature() {
-            signatureCanvas = document.getElementById('signatureCanvas');
-            signatureCtx = signatureCanvas.getContext('2d');
+        // Datos del visitante
+        const visitanteData = {
+            nombre: '',
+            sucursal: '',
+            email: '',
+            telefono: '',
+            empresa: '',
+            motivo: '',
+            anfitrion: '',
+            firma: '',
+            foto: ''
+        };
 
-            // Configurar tamaño del canvas
-            setupSignatureCanvasSize();
+        // Datos de anfitriones por sucursal
+        const anfitrionesPorSucursal = {
+            'sucursal_centro': ['Leslie Pacheco', 'Lic. Ramírez', 'Ing. Torres'],
+            'sucursal_norte': ['Dr. Mendoza', 'Lic. García', 'Ing. López'],
+            'sucursal_sur': ['Lic. Hernández', 'Ing. Martínez', 'Dr. Rodríguez'],
+            'sucursal_este': ['Ing. Pérez', 'Lic. González', 'Dr. Sánchez']
+        };
 
-            // Configurar estilo de dibujo
-            signatureCtx.lineWidth = 3;
-            signatureCtx.lineJoin = 'round';
-            signatureCtx.lineCap = 'round';
-            signatureCtx.strokeStyle = '#000000';
+        // Inicialización cuando carga la página
+        document.addEventListener('DOMContentLoaded', function () {
+            updateTime();
+            timeInterval = setInterval(updateTime, 60000);
+            initializeSignature();
+            updateProgressBar(currentStep);
+            updateCurrentDate();
 
-            // Limpiar canvas con fondo blanco
-            clearSignature();
-
-            // Agregar event listeners
-            setupSignatureEventListeners();
-        }
-
-        function setupSignatureCanvasSize() {
-            const containerWidth = signatureCanvas.parentElement.clientWidth;
-            signatureCanvas.width = containerWidth - 60;
-            signatureCanvas.height = 150;
-        }
-
-        function setupSignatureEventListeners() {
-            // Eventos de Mouse
-            signatureCanvas.addEventListener('mousedown', startSignatureDrawing);
-            signatureCanvas.addEventListener('mousemove', drawSignature);
-            signatureCanvas.addEventListener('mouseup', stopSignatureDrawing);
-            signatureCanvas.addEventListener('mouseout', stopSignatureDrawing);
-
-            // Eventos de Touch
-            signatureCanvas.addEventListener('touchstart', handleSignatureTouchStart);
-            signatureCanvas.addEventListener('touchmove', handleSignatureTouchMove);
-            signatureCanvas.addEventListener('touchend', stopSignatureDrawing);
-        }
-
-        function getSignatureCanvasPosition(e) {
-            const rect = signatureCanvas.getBoundingClientRect();
-            let x, y;
-
-            if (e.type.includes('touch')) {
-                x = e.touches[0].clientX - rect.left;
-                y = e.touches[0].clientY - rect.top;
-            } else {
-                x = e.clientX - rect.left;
-                y = e.clientY - rect.top;
+            // Verificar que el input de nombre esté funcionando
+            const nombreInput = document.getElementById('nombre');
+            if (nombreInput) {
+                nombreInput.addEventListener('input', function () {
+                    visitanteData.nombre = this.value;
+                });
             }
+        });
 
-            return { x, y };
-        }
-
-        function startSignatureDrawing(e) {
-            e.preventDefault();
-            isDrawing = true;
-            const pos = getSignatureCanvasPosition(e);
-            [lastX, lastY] = [pos.x, pos.y];
-
-            // Comenzar nuevo trazo
-            signatureCtx.beginPath();
-            signatureCtx.moveTo(lastX, lastY);
-        }
-
-        function drawSignature(e) {
-            if (!isDrawing) return;
-            e.preventDefault();
-
-            const pos = getSignatureCanvasPosition(e);
-            const currentX = pos.x;
-            const currentY = pos.y;
-
-            // Dibujar línea
-            signatureCtx.lineTo(currentX, currentY);
-            signatureCtx.stroke();
-
-            // Actualizar última posición
-            [lastX, lastY] = [currentX, currentY];
-        }
-
-        function handleSignatureTouchStart(e) {
-            startSignatureDrawing(e);
-        }
-
-        function handleSignatureTouchMove(e) {
-            drawSignature(e);
-        }
-
-        function stopSignatureDrawing() {
-            isDrawing = false;
-        }
-
-        function clearSignature() {
-            signatureCtx.fillStyle = 'white';
-            signatureCtx.fillRect(0, 0, signatureCanvas.width, signatureCanvas.height);
-            signatureCtx.beginPath();
-        }
-
-        function isSignatureDrawn() {
-            const imageData = signatureCtx.getImageData(0, 0, signatureCanvas.width, signatureCanvas.height);
-            const data = imageData.data;
-
-            // Verificar si hay píxeles no blancos
-            for (let i = 0; i < data.length; i += 4) {
-                if (data[i] !== 255 || data[i + 1] !== 255 || data[i + 2] !== 255) {
-                    return true;
-                }
-            }
-            return false;
-        }
-        // ========== FIN SISTEMA DE FIRMA ==========
-
-        // Actualizar hora en tiempo real
+        // Función para actualizar la hora
         function updateTime() {
             const now = new Date();
-            const timeString = now.getHours() + ':' + now.getMinutes().toString().padStart(2, '0');
-            document.getElementById('currentTime').textContent = timeString;
+            document.getElementById('currentTime').textContent =
+                now.getHours() + ':' + now.getMinutes().toString().padStart(2, '0');
         }
-        setInterval(updateTime, 60000);
-        updateTime();
+
+        // Función para obtener la fecha actual
+        function updateCurrentDate() {
+            const today = new Date();
+            const day = today.getDate().toString().padStart(2, '0');
+            const month = (today.getMonth() + 1).toString().padStart(2, '0');
+            const year = today.getFullYear();
+
+            document.getElementById('currentDate').textContent = `${day} / ${month} / ${year}`;
+        }
 
         // Navegación entre pasos
         function nextStep(nextStepId) {
-            const currentStep = document.querySelector('.step.active');
-            const nextStep = document.getElementById(nextStepId);
+            // GUARDAR PRIMERO los datos del paso actual
+            saveStepData(currentStep);
 
-            if (validateStep(currentStep.id)) {
-                // Guardar datos antes de cambiar
-                saveStepData(currentStep.id);
-
-                currentStep.classList.remove('active');
-                nextStep.classList.add('active');
+            // LUEGO validar
+            if (validateStep(currentStep)) {
+                currentStep = nextStepId;
                 updateProgressBar(nextStepId);
 
-                // Actualizar confirmación si es el último paso
                 if (nextStepId === 'step-confirmacion') {
                     updateConfirmation();
                 }
@@ -890,24 +1104,19 @@
         }
 
         function prevStep(prevStepId) {
-            const currentStep = document.querySelector('.step.active');
-            const prevStep = document.getElementById(prevStepId);
-
-            currentStep.classList.remove('active');
-            prevStep.classList.add('active');
+            currentStep = prevStepId;
             updateProgressBar(prevStepId);
         }
 
-        // Actualizar lista de anfitriones según sucursal seleccionada
+        // Actualizar anfitriones según la sucursal seleccionada
         function updateAnfitriones() {
             const sucursalSelect = document.getElementById('sucursal');
             const anfitrionSelect = document.getElementById('anfitrion');
             const sucursal = sucursalSelect.value;
-            
+
             // Limpiar opciones actuales
             anfitrionSelect.innerHTML = '<option value="">Selecciona un anfitrión</option>';
-            
-            // Agregar anfitriones según la sucursal
+
             if (sucursal && anfitrionesPorSucursal[sucursal]) {
                 anfitrionesPorSucursal[sucursal].forEach(anfitrion => {
                     const option = document.createElement('option');
@@ -918,149 +1127,179 @@
             }
         }
 
-        // Guardar datos del paso actual
-        function saveStepData(stepId) {
-            if (stepId === 'step-welcome') {
-                visitanteData.nombre = document.getElementById('nombreCompleto').value;
-            } else if (stepId === 'step-sucursal') {
-                visitanteData.sucursal = document.getElementById('sucursal').value;
-            } else if (stepId === 'step-datos') {
-                visitanteData.email = document.getElementById('email').value;
-                visitanteData.telefono = document.getElementById('telefono').value;
-            } else if (stepId === 'step-motivo') {
-                visitanteData.empresa = document.getElementById('empresa').value;
-                visitanteData.motivo = document.getElementById('motivo').value;
-                visitanteData.anfitrion = document.getElementById('anfitrion').value;
-            } else if (stepId === 'step-firma') {
-                // Guardar firma como imagen
-                visitanteData.firma = signatureCanvas.toDataURL('image/png');
+        // Sistema de firma
+        function initializeSignature() {
+            const canvas = document.getElementById('signatureCanvas');
+            signatureCtx = canvas.getContext('2d');
+
+            setupSignatureCanvasSize();
+
+            signatureCtx.lineWidth = 3;
+            signatureCtx.lineJoin = 'round';
+            signatureCtx.lineCap = 'round';
+            signatureCtx.strokeStyle = '#000000';
+
+            clearSignature();
+
+            // Agregar event listeners para la firma
+            canvas.addEventListener('mousedown', startSignatureDrawing);
+            canvas.addEventListener('mousemove', drawSignature);
+            canvas.addEventListener('mouseup', stopSignatureDrawing);
+            canvas.addEventListener('mouseout', stopSignatureDrawing);
+
+            canvas.addEventListener('touchstart', startSignatureDrawing);
+            canvas.addEventListener('touchmove', drawSignature);
+            canvas.addEventListener('touchend', stopSignatureDrawing);
+        }
+
+        function setupSignatureCanvasSize() {
+            const canvas = document.getElementById('signatureCanvas');
+            const containerWidth = canvas.parentElement.clientWidth || 300;
+            canvas.width = containerWidth - 60;
+            canvas.height = 150;
+        }
+
+        // Eventos de firma
+        function startSignatureDrawing(event) {
+            event.preventDefault();
+            if (!signatureCtx) return;
+
+            isDrawing = true;
+            const pos = getSignatureCanvasPosition(event);
+            [lastX, lastY] = [pos.x, pos.y];
+
+            signatureCtx.beginPath();
+            signatureCtx.moveTo(lastX, lastY);
+        }
+
+        function drawSignature(event) {
+            if (!isDrawing || !signatureCtx) return;
+            event.preventDefault();
+
+            const pos = getSignatureCanvasPosition(event);
+            const currentX = pos.x;
+            const currentY = pos.y;
+
+            signatureCtx.lineTo(currentX, currentY);
+            signatureCtx.stroke();
+
+            [lastX, lastY] = [currentX, currentY];
+        }
+
+        function stopSignatureDrawing() {
+            isDrawing = false;
+        }
+
+        function getSignatureCanvasPosition(event) {
+            const canvas = document.getElementById('signatureCanvas');
+            const rect = canvas.getBoundingClientRect();
+
+            if (event.type.includes('touch')) {
+                return {
+                    x: event.touches[0].clientX - rect.left,
+                    y: event.touches[0].clientY - rect.top
+                };
+            } else {
+                return {
+                    x: event.clientX - rect.left,
+                    y: event.clientY - rect.top
+                };
             }
         }
 
-        // Actualizar barra de progreso
+        function clearSignature() {
+            const canvas = document.getElementById('signatureCanvas');
+            if (!signatureCtx) return;
+
+            signatureCtx.fillStyle = 'white';
+            signatureCtx.fillRect(0, 0, canvas.width, canvas.height);
+            signatureCtx.beginPath();
+        }
+
+        function isSignatureDrawn() {
+            const canvas = document.getElementById('signatureCanvas');
+            if (!signatureCtx) return false;
+
+            const imageData = signatureCtx.getImageData(0, 0, canvas.width, canvas.height);
+            const data = imageData.data;
+
+            for (let i = 0; i < data.length; i += 4) {
+                if (data[i] !== 255 || data[i + 1] !== 255 || data[i + 2] !== 255) {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        // Sistema de progreso
         function updateProgressBar(stepId) {
             const steps = document.querySelectorAll('.progress-step');
             const progressCompleted = document.getElementById('progressCompleted');
-            
-            let progressPercentage = 0;
-            
-            steps.forEach(step => step.classList.remove('active', 'completed'));
+            const currentStepElement = document.getElementById(stepId);
 
-            if (stepId === 'step-welcome') {
-                progressPercentage = 0;
-                steps[0].classList.add('active');
-            } else if (stepId === 'step-sucursal') {
-                progressPercentage = 16;
-                steps[0].classList.add('completed');
-                steps[1].classList.add('active');
-            } else if (stepId === 'step-datos') {
-                progressPercentage = 32;
-                steps[0].classList.add('completed');
-                steps[1].classList.add('completed');
-                steps[2].classList.add('active');
-            } else if (stepId === 'step-motivo') {
-                progressPercentage = 48;
-                steps[0].classList.add('completed');
-                steps[1].classList.add('completed');
-                steps[2].classList.add('completed');
-                steps[3].classList.add('active');
-            } else if (stepId === 'step-foto') {
-                progressPercentage = 64;
-                steps[0].classList.add('completed');
-                steps[1].classList.add('completed');
-                steps[2].classList.add('completed');
-                steps[3].classList.add('completed');
-                steps[4].classList.add('active');
-            } else if (stepId === 'step-firma') {
-                progressPercentage = 80;
-                steps[0].classList.add('completed');
-                steps[1].classList.add('completed');
-                steps[2].classList.add('completed');
-                steps[3].classList.add('completed');
-                steps[4].classList.add('completed');
-                steps[5].classList.add('active');
-            } else if (stepId === 'step-confirmacion') {
-                progressPercentage = 100;
-                steps[0].classList.add('completed');
-                steps[1].classList.add('completed');
-                steps[2].classList.add('completed');
-                steps[3].classList.add('completed');
-                steps[4].classList.add('completed');
-                steps[5].classList.add('completed');
-                steps[6].classList.add('active');
+            // Ocultar todos los pasos
+            document.querySelectorAll('.step').forEach(step => {
+                step.classList.remove('active');
+            });
+
+            // Mostrar el paso actual
+            if (currentStepElement) {
+                currentStepElement.classList.add('active');
             }
-            
-            progressCompleted.style.width = `${progressPercentage}%`;
+
+            if (!progressCompleted) return;
+
+            const stepNumber = parseInt(currentStepElement?.getAttribute('data-step') || '1');
+            const totalSteps = steps.length;
+            const completedWidth = ((stepNumber - 1) / (totalSteps - 1)) * 100;
+
+            progressCompleted.style.width = completedWidth + '%';
+
+            steps.forEach((step, index) => {
+                const stepNum = parseInt(step.getAttribute('data-step') || '0');
+                step.classList.remove('active', 'completed');
+
+                if (stepNum < stepNumber) {
+                    step.classList.add('completed');
+                    step.innerHTML = '✓';
+                } else if (stepNum === stepNumber) {
+                    step.classList.add('active');
+                    step.innerHTML = stepNum.toString();
+                } else {
+                    step.innerHTML = stepNum.toString();
+                }
+            });
         }
 
-        // Validación de campos
-        function validateStep(stepId) {
-            if (stepId === 'step-welcome') {
-                const nombre = document.getElementById('nombreCompleto').value.trim();
-                if (!nombre) {
-                    alert('Por favor ingresa tu nombre completo');
-                    return false;
-                }
-            } else if (stepId === 'step-sucursal') {
-                const sucursal = document.getElementById('sucursal').value;
-                if (!sucursal) {
-                    alert('Por favor selecciona una sucursal');
-                    return false;
-                }
-            } else if (stepId === 'step-motivo') {
-                const anfitrion = document.getElementById('anfitrion').value;
-                if (!anfitrion) {
-                    alert('Por favor selecciona un anfitrión');
-                    return false;
-                }
-            } else if (stepId === 'step-foto') {
-                const photoPreview = document.getElementById('photoPreview');
-                if (photoPreview.style.display !== 'block') {
-                    alert('Por favor toma una foto antes de continuar');
-                    return false;
-                }
-            } else if (stepId === 'step-firma') {
-                // Verificar que se haya dibujado una firma
-                if (!isSignatureDrawn()) {
-                    alert('Por favor dibuja tu firma antes de continuar');
-                    return false;
-                }
+        // Sistema de cámara
+        async function openCamera() {
+            isCameraOpen = true;
+            document.getElementById('cameraContainer').style.display = 'block';
+
+            try {
+                stream = await navigator.mediaDevices.getUserMedia({ video: { facingMode: 'user' } });
+                const cameraVideo = document.getElementById('cameraVideo');
+                cameraVideo.srcObject = stream;
+            } catch (error) {
+                console.error('Error al acceder a la cámara:', error);
+                alert('No se pudo acceder a la cámara. Permite el acceso a la cámara en tu navegador.');
+                closeCamera();
             }
-            return true;
-        }
-
-        // Cámara
-        let stream = null;
-
-        function openCamera() {
-            const cameraContainer = document.getElementById('cameraContainer');
-            const video = document.getElementById('cameraVideo');
-
-            cameraContainer.style.display = 'block';
-
-            navigator.mediaDevices.getUserMedia({ video: { facingMode: 'user' } })
-                .then(function (mediaStream) {
-                    stream = mediaStream;
-                    video.srcObject = mediaStream;
-                })
-                .catch(function (error) {
-                    console.error('Error al acceder a la cámara:', error);
-                    alert('No se pudo acceder a la cámara. Permite el acceso a la cámara en tu navegador.');
-                    closeCamera();
-                });
         }
 
         function closeCamera() {
-            const cameraContainer = document.getElementById('cameraContainer');
-            const video = document.getElementById('cameraVideo');
+            isCameraOpen = false;
+            document.getElementById('cameraContainer').style.display = 'none';
 
             if (stream) {
                 stream.getTracks().forEach(track => track.stop());
                 stream = null;
             }
 
-            video.srcObject = null;
-            cameraContainer.style.display = 'none';
+            const cameraVideo = document.getElementById('cameraVideo');
+            if (cameraVideo) {
+                cameraVideo.srcObject = null;
+            }
         }
 
         function takePhoto() {
@@ -1069,84 +1308,375 @@
             const context = canvas.getContext('2d');
             const photoPreview = document.getElementById('photoPreview');
 
-            // Ajustar canvas al tamaño del video
+            if (!context) return;
+
             canvas.width = video.videoWidth;
             canvas.height = video.videoHeight;
 
-            // Dibujar frame actual del video en el canvas
             context.drawImage(video, 0, 0, canvas.width, canvas.height);
 
-            // Convertir a data URL y mostrar preview
-            photoPreview.src = canvas.toDataURL('image/png');
+            visitanteData.foto = canvas.toDataURL('image/png');
+            photoPreview.src = visitanteData.foto;
             photoPreview.style.display = 'block';
 
-            // Ocultar placeholder
             document.querySelector('.photo-placeholder').style.display = 'none';
 
-            // Cerrar cámara
             closeCamera();
         }
 
-        // Actualizar pantalla de confirmación
-        function updateConfirmation() {
-            document.getElementById('confirmNombre').textContent = visitanteData.nombre || 'Visitante';
-            document.getElementById('confirmAnfitrion').textContent = visitanteData.anfitrion || 'el anfitrión';
-            
-            // Traducir código de sucursal a nombre legible
-            let nombreSucursal = 'la sucursal';
-            switch(visitanteData.sucursal) {
-                case 'sucursal_centro': nombreSucursal = 'Sucursal Centro'; break;
-                case 'sucursal_norte': nombreSucursal = 'Sucursal Norte'; break;
-                case 'sucursal_sur': nombreSucursal = 'Sucursal Sur'; break;
-                case 'sucursal_este': nombreSucursal = 'Sucursal Este'; break;
+        // Validación y guardado de datos
+        function saveStepData(stepId) {
+            switch (stepId) {
+                case 'step-welcome':
+                    visitanteData.nombre = document.getElementById('nombre').value;
+                    break;
+                case 'step-sucursal':
+                    visitanteData.sucursal = document.getElementById('sucursal').value;
+                    break;
+                case 'step-datos':
+                    visitanteData.email = document.getElementById('email').value;
+                    visitanteData.telefono = document.getElementById('telefono').value;
+                    break;
+                case 'step-motivo':
+                    visitanteData.empresa = document.getElementById('empresa').value;
+                    visitanteData.motivo = document.getElementById('motivo').value;
+                    visitanteData.anfitrion = document.getElementById('anfitrion').value;
+                    break;
+                case 'step-firma':
+                    if (signatureCtx) {
+                        visitanteData.firma = document.getElementById('signatureCanvas').toDataURL('image/png');
+                    }
+                    break;
             }
-            document.getElementById('confirmSucursal').textContent = nombreSucursal;
         }
 
-        // Finalizar registro
-        function finalizarRegistro() {
-            // Aquí enviarías los datos al servidor
-            console.log('Datos del visitante:', visitanteData);
-
-            alert('¡Registro completado exitosamente! El anfitrión ha sido notificado.');
-
-            // Reiniciar formulario
-            resetForm();
+        function validateStep(stepId) {
+            switch (stepId) {
+                case 'step-welcome':
+                    if (!visitanteData.nombre?.trim()) {
+                        alert('Por favor ingresa tu nombre completo');
+                        return false;
+                    }
+                    break;
+                case 'step-sucursal':
+                    if (!visitanteData.sucursal) {
+                        alert('Por favor selecciona una sucursal');
+                        return false;
+                    }
+                    break;
+                case 'step-datos':
+                    if (!visitanteData.email?.trim() && !visitanteData.telefono?.trim()) {
+                        alert('Por favor ingresa al menos un método de contacto (email o teléfono)');
+                        return false;
+                    }
+                    break;
+                case 'step-motivo':
+                    if (!visitanteData.anfitrion) {
+                        alert('Por favor selecciona un anfitrión');
+                        return false;
+                    }
+                    if (!visitanteData.motivo) {
+                        alert('Por favor selecciona un motivo de la visita');
+                        return false;
+                    }
+                    break;
+                case 'step-foto':
+                    if (!visitanteData.foto) {
+                        alert('Por favor toma una foto antes de continuar');
+                        return false;
+                    }
+                    break;
+                case 'step-firma':
+                    if (!isSignatureDrawn()) {
+                        alert('Por favor dibuja tu firma antes de continuar');
+                        return false;
+                    }
+                    break;
+            }
+            return true;
         }
 
-        function resetForm() {
-            // Limpiar formularios
-            document.querySelectorAll('.form-input').forEach(input => input.value = '');
-            document.querySelectorAll('.form-select').forEach(select => select.value = '');
+        // Actualizar confirmación
+        function updateConfirmation() {
+            // Actualizar nombre en el acuerdo
+            document.getElementById('nombreAcuerdo').textContent = visitanteData.nombre || '________________________________';
 
-            // Limpiar foto
+            // Actualizar pantalla de confirmación
+            document.getElementById('confirmacionTitulo').textContent = `¡Bienvenido ${visitanteData.nombre || 'Nombre'}!`;
+
+            // Actualizar anfitrión
+            document.getElementById('anfitrionConfirmacion').textContent = visitanteData.anfitrion || 'Leslie Pacheco';
+
+            // Actualizar sucursal
+            const sucursalText =
+                visitanteData.sucursal === 'sucursal_centro' ? 'Sucursal Centro' :
+                    visitanteData.sucursal === 'sucursal_norte' ? 'Sucursal Norte' :
+                        visitanteData.sucursal === 'sucursal_sur' ? 'Sucursal Sur' :
+                            visitanteData.sucursal === 'sucursal_este' ? 'Sucursal Este' : 'la sucursal';
+
+            document.getElementById('sucursalConfirmacion').textContent = sucursalText;
+        }
+
+        // Descargar etiqueta directamente
+        function descargarEtiqueta() {
+            // Llenar datos en la etiqueta oculta
+            document.getElementById('printNombre').textContent = visitanteData.nombre || 'No especificado';
+            document.getElementById('printEmpresa').textContent = visitanteData.empresa || 'No especificada';
+
+            // Convertir motivo a texto legible
+            const motivoText = {
+                'reunion': 'Reunión de negocios',
+                'entrevista': 'Entrevista',
+                'entrega': 'Entrega de documentos',
+                'capacitacion': 'Capacitación',
+                'otro': 'Otro'
+            }[visitanteData.motivo] || 'No especificado';
+
+            document.getElementById('printMotivo').textContent = motivoText;
+            document.getElementById('printAnfitrion').textContent = visitanteData.anfitrion || 'No especificado';
+
+            // Fecha y hora actual
+            const now = new Date();
+            const fecha = now.toLocaleDateString();
+            const hora = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+            document.getElementById('printFecha').textContent = `FECHA: ${fecha}`;
+            document.getElementById('printHora').textContent = `HORA: ${hora}`;
+
+            // Sucursal
+            const sucursalText =
+                visitanteData.sucursal === 'sucursal_centro' ? 'Sucursal Centro' :
+                    visitanteData.sucursal === 'sucursal_norte' ? 'Sucursal Norte' :
+                        visitanteData.sucursal === 'sucursal_sur' ? 'Sucursal Sur' :
+                            visitanteData.sucursal === 'sucursal_este' ? 'Sucursal Este' : 'No especificada';
+            document.getElementById('printSucursal').textContent = sucursalText;
+
+            // Generar código único
+            const codigo = generarCodigoUnico();
+            document.getElementById('printCodigo').textContent = `CÓDIGO SALIDA: ${codigo}`;
+
+            // Crear ventana de impresión
+            const ventanaImpresion = window.open('', '_blank');
+            const contenido = `
+                    <!DOCTYPE html>
+                    <html>
+                    <head>
+                        <title>Etiqueta Visitante - Joffroy</title>
+                        <style>
+                            body {
+                                margin: 0;
+                                padding: 20px;
+                                font-family: Arial, sans-serif;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                min-height: 100vh;
+                            }
+                            .etiqueta {
+                                width: 400px;
+                                border: 2px solid #1e3a8a;
+                                border-radius: 10px;
+                                padding: 25px;
+                                background: white;
+                            }
+                            .logo {
+                                font-size: 28px;
+                                font-weight: bold;
+                                color: #1e3a8a;
+                                text-align: center;
+                                margin-bottom: 5px;
+                            }
+                            .subtitle {
+                                font-size: 16px;
+                                font-weight: 600;
+                                text-align: center;
+                                margin-bottom: 15px;
+                            }
+                            .divider {
+                                height: 2px;
+                                background: #1e3a8a;
+                                margin: 15px 0;
+                            }
+                            .section { margin-bottom: 15px; }
+                            .section-title {
+                                font-size: 18px;
+                                font-weight: bold;
+                                margin-bottom: 5px;
+                            }
+                            .section-subtitle {
+                                font-size: 14px;
+                                font-weight: 600;
+                                margin-bottom: 3px;
+                            }
+                            .value { font-size: 16px; margin-bottom: 10px; padding-left: 10px; }
+                            .anfitrion-container {
+                                display: flex;
+                                justify-content: space-between;
+                                align-items: center;
+                                margin: 15px 0;
+                            }
+                            .anfitrion-name { font-size: 16px; font-weight: 600; }
+                            .codigo { font-size: 14px; font-weight: bold; color: #1e3a8a; }
+                            .footer {
+                                margin-top: 20px;
+                                padding-top: 15px;
+                                border-top: 1px solid #ddd;
+                            }
+                            .fecha-hora {
+                                display: flex;
+                                justify-content: space-between;
+                                margin-bottom: 10px;
+                            }
+                            .fecha, .hora { font-size: 14px; font-weight: 600; }
+                            .sucursal { font-size: 14px; font-weight: 600; margin-bottom: 15px; }
+                            .instructions {
+                                font-size: 12px;
+                                color: #666;
+                                line-height: 1.4;
+                                text-align: center;
+                                margin-top: 15px;
+                            }
+                            @media print {
+                                body { margin: 0; padding: 0; }
+                                .etiqueta { border: none; box-shadow: none; }
+                            }
+                        </style>
+                    </head>
+                    <body>
+                        <div class="etiqueta">
+                            <div class="logo">JOFFROY</div>
+                            <div class="subtitle">VISITANTE</div>
+
+                            <div class="divider"></div>
+
+                            <div class="section">
+                                <div class="section-title">NOMBRE</div>
+                                <div class="value">${visitanteData.nombre || 'No especificado'}</div>
+                            </div>
+
+                            <div class="section">
+                                <div class="section-subtitle">EMPRESA</div>
+                                <div class="value">${visitanteData.empresa || 'No especificada'}</div>
+                            </div>
+
+                            <div class="section">
+                                <div class="section-subtitle">MOTIVO</div>
+                                <div class="value">${motivoText}</div>
+                            </div>
+
+                            <div class="section">
+                                <div class="section-subtitle">ANFITRIÓN</div>
+                                <div class="anfitrion-container">
+                                    <div class="anfitrion-name">${visitanteData.anfitrion || 'No especificado'}</div>
+                                    <div class="codigo">CÓDIGO SALIDA: ${codigo}</div>
+                                </div>
+                            </div>
+
+                            <div class="divider"></div>
+
+                            <div class="footer">
+                                <div class="fecha-hora">
+                                    <div class="fecha">FECHA: ${fecha}</div>
+                                    <div class="hora">HORA: ${hora}</div>
+                                </div>
+                                <div class="sucursal">${sucursalText}</div>
+
+                                <div class="instructions">
+                                    • Use esta etiqueta durante su visita<br>
+                                    • Escanee el QR al salir<br>
+                                    • Devuelva la etiqueta en recepción
+                                </div>
+                            </div>
+                        </div>
+                        <script>
+                            window.onload = function() {
+                                window.print();
+                                setTimeout(function() {
+                                    window.close();
+                                }, 1000);
+                            };
+                        <\/script>
+                    </body>
+                    </html>
+                `;
+
+            ventanaImpresion.document.write(contenido);
+            ventanaImpresion.document.close();
+
+            // Reiniciar formulario después de descargar
+            setTimeout(() => {
+                resetearFormularioCompleto();
+            }, 2000);
+        }
+
+        function generarCodigoUnico() {
+            const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+            let result = '';
+            for (let i = 0; i < 8; i++) {
+                result += chars.charAt(Math.floor(Math.random() * chars.length));
+            }
+            return result;
+        }
+
+        // MÉTODO MEJORADO PARA RESETEO COMPLETO
+        function resetearFormularioCompleto() {
+            // 1. Cerrar cámara
+            closeCamera();
+
+            // 2. REINICIAR INMEDIATAMENTE EL PASO ACTUAL
+            currentStep = 'step-welcome';
+
+            // 3. Reiniciar datos
+            visitanteData.nombre = '';
+            visitanteData.sucursal = '';
+            visitanteData.email = '';
+            visitanteData.telefono = '';
+            visitanteData.empresa = '';
+            visitanteData.motivo = '';
+            visitanteData.anfitrion = '';
+            visitanteData.firma = '';
+            visitanteData.foto = '';
+
+            // 4. Limpiar formularios
+            document.getElementById('nombre').value = '';
+            document.getElementById('sucursal').value = '';
+            document.getElementById('email').value = '';
+            document.getElementById('telefono').value = '';
+            document.getElementById('empresa').value = '';
+            document.getElementById('motivo').value = '';
+            document.getElementById('anfitrion').innerHTML = '<option value="">Selecciona un anfitrión</option>';
+
+            // 5. Limpiar elementos visuales
+            limpiarElementosVisuales();
+
+            // 6. Actualizar progreso
+            updateProgressBar('step-welcome');
+
+            console.log('✅ Formulario completamente reiniciado - Mostrando paso 1');
+        }
+
+        function limpiarElementosVisuales() {
+            // Limpiar foto preview
             const photoPreview = document.getElementById('photoPreview');
             photoPreview.style.display = 'none';
             photoPreview.src = '';
-            document.querySelector('.photo-placeholder').style.display = 'block';
+
+            // Mostrar placeholder de foto
+            const photoPlaceholder = document.querySelector('.photo-placeholder');
+            if (photoPlaceholder) {
+                photoPlaceholder.style.display = 'flex';
+            }
 
             // Limpiar firma
             clearSignature();
 
-            // Reiniciar progreso
-            document.querySelector('.step.active').classList.remove('active');
-            document.getElementById('step-welcome').classList.add('active');
-            updateProgressBar('step-welcome');
-
-            // Limpiar datos
-            visitanteData = {};
+            // Limpiar nombre en el acuerdo
+            document.getElementById('nombreAcuerdo').textContent = '________________________________';
         }
 
-        // Inicializar cuando el DOM esté listo
-        document.addEventListener('DOMContentLoaded', function () {
-            initializeSignature();
-            updateProgressBar('step-welcome');
-
-            // Redimensionar canvas cuando cambie el tamaño de la ventana
-            window.addEventListener('resize', function () {
-                setupSignatureCanvasSize();
-                clearSignature();
-            });
+        // Redimensionar canvas cuando cambie el tamaño de la ventana
+        window.addEventListener('resize', function () {
+            setupSignatureCanvasSize();
+            clearSignature();
         });
     </script>
 </body>
